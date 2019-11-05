@@ -1,0 +1,367 @@
+html {
+	font-size: 62.5%;
+}
+$lineheight-ratio: 1.4;
+
+@font-face{
+	font-family:'TheSansRegular';
+	src:url("~@/assets/fonts/TheSans/TheSans_LT_500_Regular/TheSans_LT_500_.eot");
+	src:url("~@/assets/fonts/TheSans/TheSans_LT_500_Regular/TheSans_LT_500_.eot?#iefix") format("embedded-opentype"),
+		url("~@/assets/fonts/TheSans/TheSans_LT_500_Regular/TheSans_LT_500_.woff") format("woff"),
+		url("~@/assets/fonts/TheSans/TheSans_LT_500_Regular/TheSans_LT_500_.svg#TheSans_LT_500_") format("svg");
+	font-weight:normal;
+	font-style:normal
+}
+
+@font-face{
+	font-family:'TheSansRegular';
+	src:url("~@/assets/fonts/TheSans/TheSans_LT_700_Bold/TheSans_LT_700_.eot");
+	src:url("~@/assets/fonts/TheSans/TheSans_LT_700_Bold/TheSans_LT_700_.eot?#iefix") format("embedded-opentype"),
+		url("~@/assets/fonts/TheSans/TheSans_LT_700_Bold/TheSans_LT_700_.woff") format("woff"),
+		url("~@/assets/fonts/TheSans/TheSans_LT_700_Bold/TheSans_LT_700_.svg#TheSans_LT_700_") format("svg");
+	font-weight:bold;
+	font-style:normal
+}
+
+@font-face{
+	font-family:'TheSansBold';
+	src:url("~@/assets/fonts/TheSans/TheSans_LT_700_Bold/TheSans_LT_700_.eot");
+	src:url("~@/assets/fonts/TheSans/TheSans_LT_700_Bold/TheSans_LT_700_.eot?#iefix") format("embedded-opentype"),
+		url("~@/assets/fonts/TheSans/TheSans_LT_700_Bold/TheSans_LT_700_.woff") format("woff"),
+		url("~@/assets/fonts/TheSans/TheSans_LT_700_Bold/TheSans_LT_700_.svg#TheSans_LT_700_") format("svg");
+	font-weight:normal;
+	font-style:normal
+}
+
+
+@media screen and (-webkit-min-device-pixel-ratio: 0){
+
+}
+
+.theserif {
+	font-family: 'TheSerifRegular', sans-serif;
+}
+
+.theserifbold {
+	font-family: 'TheSerifBold', sans-serif;
+}
+
+.themix {
+	font-family: 'TheMixPlain', sans-serif;
+}
+
+.themixbold {
+	font-family: 'TheMixBold', sans-serif;
+}
+
+body {
+	font-family: 'TheSansRegular', sans-serif;
+//	font-family: 'TheSerifRegular', sans-serif;
+//	font-family: 'TheMixPlain', sans-serif;
+	font-style: normal;
+	font-weight: normal;
+//	font-weight: 200;
+	@include font-size(20);
+	@include line-height(20*$lineheight-ratio);
+//	 color: $color-text;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+//	@include antialiased;
+}
+
+h1, .h1 {
+	font-family: 'TheSansRegular', sans-serif;
+	margin-bottom: 16px;
+	font-weight: normal;
+	@include font-size(35);
+	@include line-height(35*$lineheight-ratio);
+	@include break(small) {
+		@include font-size(50);
+		@include line-height(50*$lineheight-ratio);
+	}
+//	font-family: 'TheMixPlain', sans-serif;
+}
+
+h2, .h2 {
+	font-family: 'TheSansBold', sans-serif;
+//	font-family: 'TheSerifBold', sans-serif;
+//	font-family: 'TheMixBold', sans-serif;
+	font-weight: normal;
+	margin-bottom: 10px;
+	@include font-size(25);
+	@include line-height(25*$lineheight-ratio);
+	@include break(small) {
+		@include font-size(30);
+		@include line-height(30*$lineheight-ratio);
+	}
+}
+
+h3, .h3 {
+	font-family: 'TheSansRegular', sans-serif;
+	font-weight: normal;
+	margin-bottom: 14px;
+	@include font-size(24);
+	@include line-height(24*$lineheight-ratio);
+	@include break(small) {
+		@include font-size(26);
+		@include line-height(26*$lineheight-ratio);
+	}
+}
+
+h4, .h4 {
+	font-family: 'TheSansRegular', sans-serif;
+	@include font-size(24);
+	@include line-height(24*$lineheight-ratio);
+	font-weight: bold;
+	margin-bottom: 14px;
+}
+
+h5, .h5 {
+	font-family: 'TheSansRegular', sans-serif;
+	@include font-size(20);
+	@include line-height(20*$lineheight-ratio);
+	font-weight: bold;
+	margin-bottom: 14px;
+}
+
+
+p {
+	max-width: $paragraph-max-width;
+	margin-bottom: $baseline * 2;
+}
+
+a, .link {
+	color: $color-link;
+	text-decoration: none;
+	border-bottom: 1px dotted $color-link;
+	//background: $red-extralight;
+	&:hover,
+	&:focus {
+		outline:none;
+		border-bottom: $border-width solid $color-link;
+	}
+	&.no-boarder {
+		border-bottom: 0px;
+	}
+}
+
+.leadtext {
+	margin-bottom: $baseline * 2;
+	@include font-size(24);
+	@include line-height(24*$lineheight-ratio);
+	@include break(small) {
+		@include font-size(26);
+		@include line-height(26*$lineheight-ratio);
+	}
+}
+.largetext {
+	@include break(small) {
+		@include font-size(26);
+		@include line-height(26*$lineheight-ratio);
+	}
+}
+
+.text {
+	color: $color-text;
+	@include font-size(20);
+	@include line-height(20*$lineheight-ratio);
+}
+
+blockquote {
+	@extend %module;
+	@include font-size(24);
+	@include line-height(24*$lineheight-ratio);
+	@include break(medium) {
+		@include font-size(26);
+		@include line-height(26*$lineheight-ratio);
+	}
+	@include break(large) {
+		@include font-size(30);
+		@include line-height(30*$lineheight-ratio);
+	}
+
+	p:before {
+		content:"\2013"; /*husk denne*/
+		@include break(small) {
+			@include break(medium) {
+				position: absolute;
+				margin-left: -1em;
+			}
+		}
+
+	}
+	footer {
+		@include font-size(20);
+		@include line-height(20*$lineheight-ratio);
+		@extend %module;
+		font-weight: normal;
+	}
+}
+
+.text--center {
+	text-align: center !important;
+}
+
+.text--white {
+	color: #FFF !important;
+}
+
+.text--black {
+	color: #000 !important;
+}
+
+::selection {
+	background: $color-link;
+	color: #FFF;
+	text-shadow: none;
+}
+
+.touch {
+	a {
+		&:hover,
+		&:focus {
+			text-decoration: none;
+		}
+	}
+}
+
+
+ul, ol {
+	margin-bottom: $baseline * 2;
+	list-style: none;
+}
+li {
+	margin-bottom: $baseline/2;
+	margin-left: $grid-gutter;
+	@include break(medium) {
+		margin-left: $baseline*3;
+	}
+}
+ul {
+	li:before {
+		content:"";
+		display: block;
+		height:$baseline;
+		width:$baseline;
+		position:absolute;
+		margin-left: -($baseline*2);
+		margin-top: ($baseline/2);
+		border-radius: $baseline/2;
+		background: $red;
+		@include break(medium) {
+			margin-left: -($baseline*1.5);
+			transform: translateX(-50%);
+		}
+	}
+}
+
+ol {
+	counter-reset: li; /* Initiate a counter */
+	*list-style: decimal; /* Keep using default numbering for IE6/7 */
+	li {
+		position: relative;
+		margin-left: $baseline*3;
+		margin-bottom: $baseline;
+		&:before {
+			content: counter(li);
+		    counter-increment: li;
+		    text-align: center;
+		    vertical-align: middle;
+		    line-height: $baseline*1.75;
+			display: inline-block;
+			position: absolute;
+			height:$baseline*1.75;
+			width:$baseline*1.75;
+			left: -($baseline*3);
+			top:-2px;
+			background: $red;
+			color:$red;
+			color:white;
+			border-radius: $baseline*2;
+			border:2px solid $red;
+
+		}
+	}
+}
+
+.list--no-styling {
+	li {
+		margin: 0;
+		&:before {
+			content: "";
+			display: none;
+		}
+	}
+}
+
+table, .table {
+
+	text-align: left;
+	margin-bottom: $baseline*2;
+	width:auto;
+	&__wrapper {
+		width:100%;
+		_overflow: auto;
+		overflow-y: auto;
+	}
+	thead {
+		 background:$yellow;
+
+	}
+	th {
+        padding: $baseline/2;
+		font-family: 'TheSansBold', sans-serif;
+		font-style: normal;
+	}
+	tfoot {
+
+	}
+	tr {
+        border-bottom: $border-width solid $grey-extralight;
+	}
+
+	td {
+        padding: $baseline/2;
+
+	}
+
+	&--alt {
+		width: 100%;
+		margin-bottom: 0px;
+		tr {
+			border-bottom: $border-width solid #fff;
+		}
+
+		thead tr {
+			border-bottom: 0 solid #fff;
+		}
+
+	}
+}
+
+.subtext {
+	display: block;
+	color:#666;
+	margin-left: 0px;
+}
+
+.subtext--missing {
+//	color:$red;
+}
+
+hr {
+	border:none;
+	border-top: 12px solid rgba(0,0,0,0.1);
+	width:auto;
+	margin: 0 (-$baseline);
+	margin-bottom: $baseline*2;
+	@include break(medium) {
+		margin: 0 (-$grid-gutter);
+	}
+}
+hr.hr--alt {
+	@include break(medium) {
+		margin-bottom: $baseline*2;
+	}
+
+}

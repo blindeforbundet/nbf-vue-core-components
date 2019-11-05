@@ -54,7 +54,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
- @import "../assets/scss/blindeforbundet.scss";
+@import "../assets/scss/blindeforbundet.scss";
 
 .menu__wrapper {
 }

@@ -1,0 +1,49 @@
+// Lightbox block
+.lightbox {
+	display: none;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 1000000000000;
+	padding: $grid-gutter;
+	overflow: scroll;
+	-webkit-overflow-scrolling: touch;
+	background-color: #FFF;
+
+	@include break(medium) {
+		padding: $grid-gutter / 2;
+	}
+}
+
+	// Lightbox element
+	.lightbox__close {
+		width: $baseline * 5;
+		height: $baseline * 5;
+		position: absolute;
+		top: 0;
+		right: 0;
+		overflow: hidden;
+		background-color: $color-text;
+		color: #FFF;
+		text-decoration: none;
+		@include font-size(36);
+		@include line-height(36);
+		cursor: pointer;
+
+		&:before {
+			@extend .icon-plus:before;
+			@include rotate(-45deg);
+			position: absolute;
+			top: $baseline;
+			right: $baseline;
+		}
+
+		&:hover {
+			background-color: $color-link;
+			text-decoration: none;
+		}
+	}

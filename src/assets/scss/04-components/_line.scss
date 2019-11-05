@@ -1,0 +1,50 @@
+.line {
+	@extend %module;
+	display: block;
+	height:30px;
+	width:100%;
+	border:none;
+	background: url('~@/assets/graphics/svg/point-full.svg');
+	background: url('~@/assets/graphics/svg/point-hole.svg');
+}
+
+.line--alternative {
+	background: url('~@/assets/graphics/svg/point-hole.svg');
+}
+
+.line--related {
+	position: relative;
+	margin-top:-50%;
+	margin-bottom:50%;
+	transform: translateY(-15px);
+	@include break(medium) {
+		margin:0;
+		margin-bottom: $baseline*2;		
+		@include span(6/3);
+		@include pull(1/2);			
+		transform: none;		
+	}
+}
+
+.line--button {
+	background: url('~@/assets/graphics/svg/point-hole.svg');
+	/*
+	position: absolute;
+	z-index: 0;
+	left:-100%;
+	right:-100%;
+	*/
+	width:auto;
+	margin-top: $baseline*1;
+	margin-bottom: -($baseline*1);
+}
+
+.line--header {
+	display: none;
+	margin:0;	
+	@include break(medium) {
+		display: block;
+		@include span(6/3);
+		@include pull(1/2);				
+	}
+}

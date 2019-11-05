@@ -1,0 +1,319 @@
+// Media block
+.controller {
+
+	display: table;
+	width:100%;
+
+	background: white;
+	height:$baseline*2;
+	position: relative;
+	max-width: ($wrapper-max-width/2 - ($grid-gutter/2));
+	@include break(medium) {
+		border-top-left-radius:$baseline;
+		border-bottom-left-radius:$baseline;
+		}
+
+	&--negative-margins {
+		margin-left:0;
+		@include break(medium) {
+			margin-left:(-$grid-gutter--large/2);
+		}
+	}
+	&__wrapper {
+		@include break(medium) {
+			margin-left:(-$grid-gutter--large/2);
+		}
+		&--padding {
+			margin-bottom: $grid-gutter*2;
+			@include break(medium) {
+				margin-bottom: $grid-gutter*2;
+			}
+		}
+	}
+	&__grid {
+		display: table-row;
+
+		margin-left: 54px+$baseline;
+		text-align: right;
+
+	}
+	&__play {
+		display: block;
+		width:60px;
+		height:60px;
+		background: url('~@/assets/graphics/svg/controller__play-buttons.svg');
+		background-size: cover;
+		background-position: 0 0;
+		overflow: hidden;
+		text-indent: -1000px;
+		border:none;
+		position: absolute;
+		top:50%;
+		margin-top: -29px;
+		margin-left: $grid-gutter/2;
+		@include break(medium) {
+			margin-left: -20px;
+			margin-left: -30px;
+		}
+		&:hover, &:focus {
+			border:none;
+			background-position: -60px 0;
+		}
+
+	}
+
+	&__pause {
+		display: block;
+		width:60px;
+		height:60px;
+		background: url('~@/assets/graphics/svg/controller__play-buttons.svg');
+		background-size: cover;
+		background-position: 60px 0;
+		overflow: hidden;
+		text-indent: -1000px;
+		border:none;
+		position: absolute;
+		top:50%;
+		margin-top: -29px;
+		margin-left: $grid-gutter/2;
+		@include break(medium) {
+			margin-left: -20px;
+			margin-left: -30px;
+		}
+		&:hover, &:focus {
+			border:none;
+			background-position: -120px 0;
+		}
+	}
+
+	&__progress-bar-wrapper {
+		display: table-cell;
+		width:auto;
+		text-align: left;
+		padding-left: 85px;
+		vertical-align: middle;
+		@include break(medium) {
+			padding-left: 40px;
+		}
+	}
+	&__progress-bar {
+		width:100%;
+		height:2px;
+		border-radius: 0;
+		box-shadow: none;
+		position: relative;
+		display: block;
+		position: relative;
+		&:before, &:after {
+			content:"";
+			display: block;
+			position: absolute;
+			top:(-12px/2+(2px/2));
+			left:0;
+			width:12px;
+			height:12px;
+			z-index: 1;
+			@include sprite(0,2);
+		}
+		&:after {
+			left:auto;
+			right:0;
+			@include sprite(0,2);
+		}
+
+		&:not(value) {
+			background-color: $color-text;
+		}
+		&[value] {
+			-webkit-appearance: none;
+			-moz-appearance: none;
+	        appearance: none;
+			border: none;
+			box-shadow: none;
+			border-radius: 0;
+			color:$red;
+		}
+		&[value]::-webkit-progress-bar {
+		  	background-color: $color-text;
+		  	border-radius: 0;
+		  	box-shadow: none;
+		}
+		&[value]::-moz-progress-bar {
+			background-color: $red;
+		}
+		&[value]::-webkit-progress-value {
+			background: $red;
+			position: relative;
+			&:after {
+				content:"";
+				display: block;
+				position: absolute;
+				top:(-$baseline+(2px/2));
+				right:-$baseline;
+				z-index: 2;
+				width:$baseline*2;
+				height:$baseline*2;
+				@include sprite(0,3);
+				&:hover {
+					background-color: $yellow;
+				}
+			}
+
+		}
+
+		&--fallback {
+			height:2px;
+			background: $color-text;
+			overflow: hidden;
+			&:after, &:before {
+				display: none;
+			}
+		}
+		&--fallback > span {
+		  background-color: $red;
+		  border-radius: 2px;
+		  width:40px;
+		  display: block;
+
+		  text-indent: -9999px;
+		}
+	}
+	&__progress-number {
+		display: table-cell;
+		width:70px;
+		height:$baseline*2;
+		line-height: $baseline*2;
+		text-align: center;
+	}
+	&__text-button-wrapper {
+		display: table-cell;
+		width:$baseline*3;
+	}
+	&__text-button {
+		position: absolute; // Hack for å få bort en margin under button
+		right:0;
+		padding:0;
+		background: $red;
+		height:$baseline*2;
+		color:white;
+		border: 3px solid $red;
+		font-family: 'TheSansRegular', sans-serif;
+		z-index: 2;
+		span {
+			position: absolute;
+			width:1px;
+			right:-1000px;
+			@include font-size(20);
+		}
+		&:before {
+			content:"Vis";
+			position: absolute !important;
+			height: 1px; width: 1px;
+			overflow: hidden;
+			clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+			clip: rect(1px, 1px, 1px, 1px);
+		}
+		.visually-hidden { /* https://snook.ca/archives/html_and_css/hiding-content-for-accessibility */
+			position: absolute !important;
+			height: 1px; width: 1px;
+			overflow: hidden;
+			clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+			clip: rect(1px, 1px, 1px, 1px);
+		}
+
+		@include break(medium) {
+			position: static;
+			width:$baseline*7;
+			span {
+				position: static;
+				width:auto;
+				right:auto;
+				display: inline-block;
+
+			}
+		}
+		&:focus, &:hover {
+			border: 3px solid white;
+			outline: 3px solid $red;
+		}
+		&.open:before {
+			@include sprite(0,10);
+			content:"Lukk";
+			margin-top: -6px;
+			@include break(medium) {
+				margin-top: -3px;
+			}
+		}
+
+	}
+	&__chart-button {
+
+		left:0;
+		padding:0;
+		background: $red;
+		height:$baseline*2;
+		color:white;
+		border: 3px solid $red;
+		font-family: 'TheSansRegular', sans-serif;
+		z-index: 2;
+		span {
+			position: static;
+			width:auto;
+			right:auto;
+			padding-right: 6px;
+			display: inline-block;
+			@include font-size(20);
+
+		}
+		&:before {
+			content:"Vis";
+			line-height: 1000px;
+			display: block;
+			float:left;
+			width:($baseline*2);
+			height:($baseline*2)-6px;
+			margin-top: -2px;
+			@include sprite(0,9);
+			@include break(medium) {
+				margin-top: -2px;
+			}
+		}
+
+		@include break(medium) {
+			position: static;
+			span {
+				position: static;
+				width:auto;
+				right:auto;
+				display: inline-block;
+
+			}
+		}
+		&.open:before {
+			@include sprite(0,10);
+			content:"Lukk";
+			margin-top: -3px;
+		}
+		&:focus, &:hover {
+			border: 3px solid white;
+			outline: 3px solid $red;
+		}
+
+	}
+	&__text-alternative {
+	//	border-top:2px dotted $red;
+		max-width: ($wrapper-max-width/2 - ($grid-gutter/2));
+	//	background: white;
+		background: $grey-extralight;
+	//	background: $grey-extralight;
+		padding:$baseline*2 $baseline $baseline*2 ($grid-gutter/2);
+		@include break(medium) {
+			padding-left:$grid-gutter;
+		}
+		&--alt {
+			@include break(medium) {
+				padding-right:$grid-gutter;
+			}
+		}
+	}
+}

@@ -10,7 +10,7 @@
         </div>
         <div class="campaign-header__description"><span>{{text}}</span></div>
           <a class="campaign-header__button button button--line button--big" :href="button_url">{{button_text}}</a>
-          <a class="campaign-header__button button  button--big button--secondary" :href="button_url">{{button_text}}</a>
+
       </div>
     </div>
   </section>
@@ -33,9 +33,5 @@ export default {
 </script>
 
 <style scoped>
-.button--secondary {
-  background: transparent;
-  background: white;
-}
 
 </style>

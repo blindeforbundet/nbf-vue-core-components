@@ -1,0 +1,445 @@
+// Form
+.form {
+	display: block;
+	width:auto;
+	max-width: 400px;
+	//border:1px solid red;
+	&__footer {
+		margin-top: $grid-gutter*2;
+	}
+	&__note {
+		display: block;
+		margin-top: $baseline / 2;
+	}
+	&--section {
+		padding-top: $baseline;
+		//border-bottom:$border-width--seperator solid $grey-extralight; 
+		//border-top:$border-width--seperator solid $grey-extralight; 
+		margin-bottom: $baseline*4;		
+	}
+	
+	// Fieldset
+	&__fieldset {
+		margin: 0 $grid-gutter ($baseline*2) 0;
+
+		@include break(medium) {
+			margin: 0 ($grid-gutter / 2) ($baseline*2) 0;
+		}
+	}
+
+	// Label
+	&__label, &__legend {
+		display: block;
+		font-weight: bold;
+		color: $color-text;
+		margin-bottom: $baseline/2;
+		cursor: pointer;
+		&--text {
+			@include break(small) {		
+				font-weight: normal;
+			}
+		}
+
+		&--inline {
+			@include break(small) {				
+				display: inline-block;
+			}
+		}
+		small {
+			font-weight: normal;
+		}
+
+		@include break(medium) {
+			/*
+			margin-left: -$grid-gutter;
+			margin-right: $baseline;
+			padding-left: $grid-gutter;
+			background: url('../graphics/svg/point-hole.svg') no-repeat transparent left center;			
+			*/
+		}			
+	}
+	&__subtext {
+		padding-left:$baseline;
+	}
+
+	// Input
+	&__input {
+		display: inline-block;
+		height: $baseline * 3;
+		padding: 0 $baseline;
+		color: $color-text;
+		border: $border-width solid $orange;
+		font-family: inherit;
+		font-weight: inherit;
+		font-size: inherit;
+		line-height: inherit;
+		width:100%;
+		min-width: 90px;
+		-webkit-appearance: none;		
+		border-radius: 0px;
+		@include break(small) {
+			width:66%;		
+		}
+		@include break(medium) {
+
+			margin-left: -$grid-gutter;
+			margin-right: $baseline;
+			padding-left: $grid-gutter;
+
+		}		
+		@include no-appearance;
+		@include radius(0);
+		@include antialiased;
+
+		//background: url('../graphics/svg/point-hole.svg') no-repeat #fff left center;
+
+		&::-webkit-inner-spin-button,
+		&::-webkit-outer-spin-button {
+			@include no-appearance;
+		    margin: 0;
+		}
+
+		&:focus {
+			color: $color-text;
+			//border-color: $color-link;
+			border-bottom: $border-width--focus solid $color-link;
+		}
+
+		&--search {
+			@include max-break(medium) {		
+				padding-right:$baseline*6;
+			}
+		}
+		// Search button
+
+		&__search {
+			width: $baseline * 2;
+			height: $baseline * 2;
+			display: block;
+			text-align: center;
+
+			@include font-size(20);
+			@include line-height(20);
+			@include radius(100%);
+			position: absolute;
+			top: 0;
+			right: $baseline / 2;
+			z-index: 100000000000;
+		}
+
+		// Reset button
+		&__reset {
+			width: $baseline * 2;
+			height: $baseline * 2;
+			display: block;
+			text-align: center;
+
+			@include font-size(20);
+			@include line-height(20);
+			@include radius(100%);
+			position: absolute;
+			top: 0;
+			right: $baseline / 2;
+			z-index: 100000000000;
+
+
+			&:hover {
+				color: $color-text;
+				text-decoration: none;
+			}
+		}
+
+
+		// Input modifiers
+		&--short {
+			width: 33%;
+		}
+		// Input modifiers
+		&--tiny {
+			width: 25%;
+		}		
+		&--full {
+			width: 100%;
+			margin-right: 0;
+		}
+
+		&--error {
+			border-color: $color-error;
+		}
+		&--inline {
+			display: inline-block;
+			padding: 0 $baseline;
+			margin:0;
+			
+		}
+
+	}
+
+	&__select {
+		display: block;
+		padding: 6px $baseline 5px $grid-gutter; // Kan gi problemer i forskjellige nettlesere							
+		margin: 0 $baseline $baseline * 2 0;
+		width:100%;
+		min-width: 140px;		
+		@include break(small) {
+			width:100%;		
+		}		
+		@include break(medium) {
+			width:auto;
+			margin-left: -$grid-gutter;
+			margin-right: $baseline;
+		}
+		//background: url(graphics/png/sprite.png) no-repeat right center; missing
+		background: none, #FFF url(~@/assets/graphics/svg/sprite.svg) no-repeat;
+		background-position: left center;
+		background-color: white; //$yellow;
+		color: $color-text;
+		border: $border-width solid $orange;
+		font-size: inherit;
+		line-height: inherit;
+		font-family: inherit;
+		font-weight: inherit;
+		cursor: pointer;
+
+		@include no-appearance;
+
+		&:-moz-focusring {
+		    color: transparent;
+		    text-shadow: 0 0 0 #000;
+		}
+
+		&:focus {
+			outline: none;
+			color: $color-text;
+			border-color: $color-link;
+		}
+
+		// Select modifiers
+		&--full {
+			width: 100%;
+		}
+		&--inline {
+			//padding: 0 $baseline 0 $grid-gutter;							
+			display: inline-block;
+			margin: 0;
+			width:auto;
+		}
+	}
+
+	// Textarea
+	&__textarea {
+		@extend .form__input !optional;
+		display: block;
+		padding: $baseline;
+		min-height: $baseline * 10;
+		width:100%;
+		@include break(medium) {
+			margin-left: -$grid-gutter;
+			padding-left: $grid-gutter;		
+		}
+		// Textarea modifiers
+		&--full {
+			width: 100%;
+		}
+	}
+
+	// Radiobutton and Checkbox
+	&__radio, &__checkbox {
+		position: absolute;
+		left:-9999px;
+
+		@include lt(IE9) {
+			visibility: visible;
+			position: static;
+		}
+
+		+ .form__label {
+			font-weight: normal;
+			@include break(medium) {
+			
+			}
+			&:before {
+				content:"";
+				cursor: pointer;
+				background: url('~@/assets/graphics/svg/sprite-radio_and_checkboxes.svg');
+				background-size: cover;
+				background-position: 0 0;				
+				width:25px;
+				height: 25px;
+				vertical-align: middle;
+				display: inline-block;
+				position: relative;
+				margin-top: -4px;
+				margin-right: 5px;
+				z-index: 10;
+				@include break(medium) {
+					margin-left: -$grid-gutter;							
+				}
+				@include lt(IE9) {
+					display: none;
+				}
+			}
+		}
+
+		&:checked {
+			+ .form__label:before {
+				background-position: -25px 0;				
+			}
+		}
+		&:disabled {
+			+ .form__label {
+				color:$color-text-lighter;
+				&:before {
+					background-position:(-25px*2) 0;				
+				}
+			}
+		}
+		&:disabled:checked {
+			+ .form__label {
+				color:$color-text-lighter;
+				&:before {
+					background-position: (-25px*3) 0;
+				}
+			}
+		}		
+		&:focus {
+			+ .form__label:before {
+				outline: 3px solid $red;
+			}
+		}				
+
+		&__label {
+			cursor: pointer;
+			white-space: nowrap;
+			display: inline-block;
+			position: relative;
+			z-index: 100;
+			padding: 0 0 $baseline 0;
+			margin: 0;
+		}
+	}
+
+	// Radiobox
+	&__checkbox {
+		+ .form__label {
+			&:before {
+				background-position: (-25px*4) 0;
+			}
+		}
+		&:checked + .form__label:before {			
+			background-position: (-25px*5) 0;
+		}		
+		&:disabled {
+			+ .form__label {
+				color:$color-text-lighter;
+				&:before {
+					background-position: (-25px*6) 0;	
+				}
+			}
+		}
+		&:disabled:checked {
+			+ .form__label {
+				color:$color-text-lighter;
+				&:before {
+					background-position: (-25px*7) 0;	
+				}
+			}
+		}				
+	}
+
+	&__radio-group {
+		list-style: none;
+		margin-bottom: $baseline * 2;
+
+		&__item {
+			position: relative;
+			list-style: none;
+			float: left;
+			margin-right: $baseline * 2;
+
+			&:last-child {
+				margin-right: 0
+			}
+		}
+	}
+
+	// Range
+	&__range {
+		display: block;
+		height: $baseline * 3.5;
+		margin-bottom: $baseline * 2;
+	}
+
+	input[type="range"] {
+		height: 2px;
+		background-color: $color-link;
+		margin-bottom: $baseline * 2;
+		@include no-appearance;
+
+		&::-webkit-slider-thumb {
+			width: $baseline * 2;
+			height: $baseline * 2;
+			background-color: $color-link;
+			cursor: pointer;
+			@include no-appearance;
+			@include radius(100%);
+
+			@include break(medium) {
+				width: $baseline * 2.5;
+				height: $baseline * 2.5;
+			}
+		}
+	}
+	
+	&__message {
+		display: block;
+		padding:0 $grid-gutter $baseline 0;
+		@include break(medium) {
+			margin-left:-$grid-gutter; 
+		}
+		//background: $yellow-light;		
+		&:before {
+			content:"";
+			display: block;
+			float:left;
+			width:30px;
+			height:30px;			
+			@include sprite(0,7);
+			margin-right: $baseline;
+			vertical-align: baseline;
+		}
+		&--error {
+			//background: $red-extralight;			
+			color:$red;
+			&:before {			
+				@include sprite(0,8);
+			}
+		}	
+		
+		&--global {
+			margin-bottom: $baseline*2;
+			@include font-size(24);
+			//@include line-height(24);			
+		}
+	}
+	&__field--error {
+		color:$red;
+	}	
+			
+	
+/*
+	// Submit
+	&__submit {
+		@extend .button;
+		font-size: inherit;
+		line-height: inherit;
+		font-family: inherit;
+		font-weight: inherit;
+
+		// Submit modifiers
+		&--full {
+			width: 100%;
+		}
+	}
+	*/
+}

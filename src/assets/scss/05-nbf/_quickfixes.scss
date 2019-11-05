@@ -1,0 +1,57 @@
+/*
+div.mejs-controls>div.mejs-button.mejs-playpause-button.mejs-play>button {
+
+    display: none;
+
+}
+
+.controller--big {
+
+    .mejs-playpause-button {
+        position: absolute;
+        margin-left: 10px !important;
+        z-index: 2;
+        button {
+            @extend .controller__play;
+            margin-top: -30px;
+            // top: 140%;
+        }
+    }
+
+}
+*/
+
+.content__frontpage--no-padding {
+        padding-bottom: 0;
+}
+
+/* Fix for playknappen i lydspilleren, slik at den ligger "på linje" */
+/*
+.controller .mejs-controls .mejs-play button {
+  margin-top: -50px;
+}
+
+.controller .mejs-controls .mejs-pause button {
+  margin-top: -50px;
+}
+*/
+.controller .mejs-controls button {
+  margin-top: -50px;
+}
+
+.full_width {
+  width: 100%;
+}
+
+.image-inline {
+  width: 100%;
+}
+
+dl.portalMessage {
+  border: 3px solid red;
+  padding: 10px;
+  dt {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+}

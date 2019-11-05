@@ -1,0 +1,187 @@
+.button {
+	display: inline-block;
+	margin: 0 $grid-gutter $grid-gutter 0;
+	padding: $baseline * 0.60 $baseline * 2 $baseline * 0.60 $baseline * 2;
+	min-height: ($baseline*3)+$border-width--focus;
+	vertical-align: top;
+	border:none;
+	background-color: $yellow;
+	color: $color-text;
+	text-align: center;
+	text-decoration: none;
+	@include font-size(20);
+	@include touch;
+	font-family: $font-header;
+	width:100%;
+
+	@include transition();
+	border-bottom:$border-width--focus solid transparent;
+	background-clip: padding-box;
+	@include break(small) {
+		width:auto;
+	}
+
+	@include break(medium) {
+		margin: 0 ($grid-gutter / 2) ($grid-gutter / 2) (-$grid-gutter);
+	}
+
+	&:hover,
+	&:focus {
+		border-bottom: $border-width--focus solid $color-link;
+	//	margin-top: -4px;
+		transform: translateY(-$border-width--focus);
+		//background-color: $yellow-light;
+		//text-decoration: underline;
+		//border:none;
+	}
+	&:active {
+		background-color: $red;
+		transform: translateY(0px);
+		border-bottom: $border-width--focus solid transparent;
+	}
+	&--mainmenu {
+		margin-left: 0;
+		padding-left: 15px;
+		&:before {
+			content:"";
+			display: inline-block;
+			height:30px;
+			width:30px;
+			margin: 0;
+			margin-right: $baseline/2;
+			vertical-align: middle;
+			border-radius: none;
+			background: none;
+			@include sprite(0,2);
+			@include transition();
+		}
+
+	}
+	
+}
+	.button__wrapper {
+		display: inline-block;
+		margin: 0 $grid-gutter $grid-gutter 0;
+		@include break(medium) {
+			width:auto;
+			margin: 0 ($grid-gutter / 2) ($grid-gutter / 2) (-$grid-gutter);
+		}
+	}
+
+
+	.button__wrapper--line {
+
+		&:before, &:after {
+
+		}
+		&:after {
+			right:auto;
+			left:100%;
+		}
+	}
+
+
+
+	.button--line, .button__wrapper--line {
+		position: relative;
+		@include break(small) {
+			&:before, &:after {
+				content:"";
+				display: inline-block;
+				background: url('~@/assets/graphics/svg/point-hole.svg');
+				background-position: right center;
+				position: absolute;
+				height:30px;
+				right:100%;
+				z-index: 0;
+				width:1500px;
+				margin-top: 0;
+				@include transition();
+
+			}
+			&:after {
+				right:auto;
+				left:100%;
+			}
+		}
+	}
+	.button--line {
+		@include break(small) {
+			&:hover, &:focus {
+				&:before, &:after {
+				//	margin-top: 4px;
+					transform: translateY($border-width--focus);
+				}
+			}
+			&:active {
+				&:before, &:after {
+			//		margin-top: 0px;
+					transform: translateY(0);
+				}
+			}
+		}
+	}
+
+	.button__wrapper--line--big {
+		&:before, &:after {
+			margin: $baseline*1.5 0;
+		}
+	}
+	.button__wrapper--line .button {
+		&:hover, &:focus {
+			//margin-top: -4px !important;
+		}
+	}
+	.button--big {
+		@extend .h2;
+		@include font-size(28);
+		padding: $baseline*1.5 $grid-gutter;
+		line-height: normal;
+		margin-top: $baseline*2;
+		@include break(medium) {
+			margin-left: -($grid-gutter);
+		}
+		&:hover,
+		&:focus {
+			//margin-top: ($baseline*2)-4;
+			border-bottom: $border-width--focus solid $color-link;
+		}
+		&:active {
+			//margin-top: ($baseline*2);
+			border-bottom: $border-width--focus solid transparent;
+		}
+	}
+	.button--inside-dark {
+		//background-color: $orange;
+		&:hover {
+		//	background-color: $yellow;
+		}
+	}
+	.button--full {
+		width: 100%;
+		margin-right: 0;
+	}
+
+	.button--section-toggle {
+		&.open {
+			margin-bottom: 0;
+			@include break(medium) {
+				margin-bottom: -$baseline;
+			}
+			background: $yellow-extralight;
+			&:before, &:after {
+				display: none;
+			}
+			border-color:$yellow-extralight;
+			&:hover, &:focus {
+				border-color:$yellow-extralight;
+			}
+		}
+	}
+	.button--search {
+		@include max-break(medium) {
+			width:$baseline*6;
+			margin:0;
+			margin-left:(-$baseline*6);
+		}
+	}

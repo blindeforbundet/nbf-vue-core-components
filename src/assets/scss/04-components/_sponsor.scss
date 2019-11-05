@@ -1,0 +1,31 @@
+.sponsor {
+
+	img {
+		width: auto;
+		text-align: left;
+		padding-top: 8px;
+	}
+	a {
+		border-bottom: 0px;
+	}
+	@include cf;
+
+	&__item {
+		margin:0;
+		margin-bottom: 20px;
+		list-style: none;
+		display: block;
+		&:before {
+			display: none;
+		}
+		@include break(small) {
+			margin-bottom: 0px;
+			text-align: center;
+		}
+		// text-align: center;
+	}
+	// :nth-child(2) {
+	// 	text-align: left;
+	// }
+
+}

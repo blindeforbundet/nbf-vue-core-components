@@ -1,0 +1,147 @@
+.bullet {
+	@include max-break(large) {		
+		display: table;
+		width:100%;
+		position: relative;
+		border:none;
+		color:$color-text;
+		padding-bottom: $baseline;
+		@include cf();		
+		
+		&:before {
+			content:"";
+			display: block;
+			display: table-cell;
+			width:100px;
+			height:100px;
+			background: url('~@/assets/graphics/svg/bullet--call.svg') transparent center center no-repeat;			
+			background-size: contain;				
+		}	
+		&--link {		
+			&:hover, &:focus {
+				border:none;
+				strong {
+					border-bottom: $border-width solid $color-link;
+					color:$color-link;
+				}	
+			}
+		}
+		/*	
+		&--secondary:before {
+			background: url('../graphics/svg/bullet--alert.svg') transparent center center no-repeat;	
+			background-size: contain;						
+		}
+		*/		
+	}
+	@include break(large) {		
+		background: url('~@/assets/graphics/svg/bullet--secondary.svg') transparent;			
+		background-size: cover;				
+		position: relative;
+		padding-bottom: 100%;
+		text-align: center;
+		@include radius(100%);	
+		/*
+		&--secondary {
+		background: $yellow;
+
+		}
+		*/
+		
+		&--link {
+			display: block;
+			border:none;
+			@include transition();	
+			.bullet__body {	
+				&:before {
+					content:"";
+					display: inline-block;
+					height:30px;
+					width:30px;	
+					margin: $baseline 0;
+					vertical-align: middle;
+					border-radius: none;
+					background: none;
+					@include sprite(0,0);				
+				}
+			}
+			p {
+				color:$color-text;
+			}
+			&:hover {
+				//background: url('../graphics/svg/bullet--focus.svg') $yellow-light;
+				//background-size: cover;
+				//border:none;
+				p {
+					//color:$red;				
+				}
+			}
+		}
+		&--inline {
+			background: url('~@/assets/graphics/svg/bullet--secondary.svg') transparent;			
+			background-size: contain;	
+			margin-bottom: $baseline*2;	
+		}
+	}			
+}
+
+.bullet__body {
+
+	@include max-break(large) {
+		display: table-cell;
+		vertical-align: middle;
+		padding-left: $baseline;
+	}
+	@include break(large) {	
+		/* START CIRCLE BODY */
+		position: absolute;
+		width: 100%;
+		text-align: center;			
+		top: 50%;
+		transform: translateY(-50%);	
+		/* SLUTT CIRCLE BODY */
+		padding:$baseline*2;
+	}
+	p {
+		@include font-size(24);
+		@include line-height(24*$lineheight-ratio);
+		font-family: $font-header;
+		margin: 0;
+		strong {
+			@include font-size(30);
+			@include line-height(30*$lineheight-ratio);
+		}
+	}		
+}
+
+.bullet__line {
+/*
+	@extend .line;
+	display: none;
+	@include break(medium) {
+		display: block;
+		position: absolute;
+		background-position: right center;
+		top:50%;
+		margin-top: -15px;
+		width:90%;
+		z-index: 0;
+		
+	}
+	*/
+}
+.bullet__wrapper {
+	@extend %module;
+	@include break(large) {
+		max-width:300px;
+		min-width: 230px;
+	}
+	&--inline {
+		@include break(large) {
+			max-width:350px;		
+			margin-top:$baseline*2;
+			margin-left:auto;
+			margin-right:auto;
+			margin-bottom: $baseline*2;
+		}
+	}
+}

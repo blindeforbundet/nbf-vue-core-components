@@ -1,0 +1,6 @@
+.box {
+	@extend %module;
+	background-color: $color-background;
+	padding: $grid-gutter / 2;
+	@include cf;
+}

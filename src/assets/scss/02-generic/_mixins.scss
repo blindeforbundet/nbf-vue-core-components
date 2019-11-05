@@ -1,0 +1,357 @@
+// Grid, breakpoints
+@mixin break($breakpoint, $value: 0) {
+
+	@if $breakpoint == x-large {
+		@media only screen and (min-width: $break-x-large) { @content; }
+	}
+
+	@if $breakpoint == large {
+		@media only screen and (min-width: $break-large) { @content; }
+	}
+
+	@else if $breakpoint == medium {
+		@media only screen and (min-width: $break-medium) { @content; }
+	}
+
+	@else if $breakpoint == small {
+		@media only screen and (min-width: $break-small) { @content; }
+	}
+
+	@else {
+		@media ($breakpoint: $value) { @content; }
+	}
+}
+
+// Grid, custom min- and max-breakpoints
+@mixin between-break($min, $max) {
+	@media (min-width: $min) and (max-width: $max) {
+		@content;
+	}
+}
+
+// Grid, custom min-breakpoint
+@mixin max-break($breakpointmax) {
+	@if $breakpointmax == small {
+		@media only screen and (max-width: ($break-small)) { @content; }
+	}
+	@else if $breakpointmax == medium {
+		@media only screen and (max-width: ($break-medium)) { @content; }
+	}
+	@else if $breakpointmax == large {
+		@media only screen and (max-width: ($break-large)) { @content; }
+	}
+	@else if $breakpointmax == x-large {
+		@media only screen and (max-width: ($break-x-large)) { @content; }
+	}
+	@else {
+		@media ($breakpoint: $value) { @content; }
+	}
+}
+
+// Grid, current breakpoint (to be used with JavaScript)
+@include break(large) { body:after { display: none; content: 'break-large';} }
+@include break(medium) { body:after { display: none; content: 'break-medium';} }
+@include break(small) { body:after { display: none; content: 'break-small';} }
+
+// Grid, function
+@function split-col-width-value($col-width, $request: fraction) {
+	$fraction: false;
+
+	@each $var in $col-width {
+		@if (type-of($var) == 'string') {
+		} @else {
+			@if (type-of($var) == 'number') {
+				$fraction: $var;
+			}
+		}
+	}
+
+	@if $request == 'fraction' {
+		@return $fraction;
+	}
+}
+
+// Grid, mixin
+@mixin span($col-width: 1, $padding: "") {
+	$fraction: split-col-width-value($col-width,fraction);
+
+	width: percentage($fraction);
+	float: left;
+
+	@if $padding != "" {
+		padding: $padding;
+	} @else {
+		padding: 0 ($grid-gutter/2);
+		//border-left:1px solid grey;
+		//border-right:1px solid grey;
+		@include break(medium){
+			padding: 0 ($grid-gutter--large/2);
+		}
+	}
+}
+
+// Grid, mixin
+@mixin push($col-width: 1) {
+	$fraction: split-col-width-value($col-width,fraction);
+	margin-left: percentage($fraction);
+}
+
+// Grid, mixin
+@mixin pull($col-width: 1) {
+	$fraction: split-col-width-value($col-width,fraction);
+	margin-left: -(percentage($fraction));
+}
+
+// SVG + PNG background
+@mixin sprite($x,$y) {
+	//background-image: url('../../graphics/png/sprite.png'); misssing
+	background-image: none, url('~@/assets/graphics/svg/sprite.svg');
+	background-position: ($x*-30px) ($y*-30px);
+	background-repeat: no-repeat;
+}
+
+@mixin keyframe ($animation_name) {
+    @-webkit-keyframes $animation_name {
+        @content;
+    }
+
+    @-moz-keyframes $animation_name {
+        @content;
+    }
+
+    @-o-keyframes $animation_name {
+        @content;
+    }
+
+    @keyframes $animation_name {
+        @content;
+    }
+}
+
+// Gradient, vertical
+@mixin linear-gradient($fromColor, $toColor) {
+	background-color: $toColor; /* Fallback Color */
+	background-image: -webkit-gradient(linear, left top, left bottom, from($fromColor), to($toColor)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(top, $fromColor, $toColor); /* Chrome 10+, Saf5.1+, iOS 5+ */
+	background-image:    -moz-linear-gradient(top, $fromColor, $toColor); /* FF3.6 */
+	background-image:     -ms-linear-gradient(top, $fromColor, $toColor); /* IE10 */
+	background-image:      -o-linear-gradient(top, $fromColor, $toColor); /* Opera 11.10+ */
+	background-image:         linear-gradient(top, $fromColor, $toColor);
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#{$fromColor}', EndColorStr='#{$toColor}');
+}
+
+// Gradient, horizontal
+@mixin horizontal-gradient($from, $to, $stop: 100%) {
+	/* fallback/image non-cover color */
+	background-color: $from;
+
+	/* Firefox 3.6+ */
+	background-image: -moz-linear-gradient(left, $from 0%, $to $stop);
+
+	/* Safari 4+, Chrome 1+ */
+	background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, $from), color-stop($stop, $to));
+
+	/* Safari 5.1+, Chrome 10+ */
+	background-image: -webkit-linear-gradient(left, $from 0%, $to $stop);
+
+	/* Opera 11.10+ */
+	background-image: -o-linear-gradient(left, $from 0%, $to $stop);
+
+	/* IE10+ */
+	background: -ms-linear-gradient(left, $from 0%, $to $stop);
+
+	/* Standard */
+	background: linear-gradient(to right, $from 0%, $to $stop);
+
+	/* IE6-9 */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$from', endColorstr='$to',GradientType=1 );
+}
+
+// Font-size calculator
+@mixin font-size($size: 16) {
+	font-size: round($size) + px;
+	font-size: (round($size) / 10) + rem;
+}
+
+// Line-height calculator
+@mixin line-height($line-height: 24) {
+	line-height: $line-height + px;
+	line-height: ($line-height / 10) + rem;
+}
+
+// Improove light text on dark background
+@mixin antialiased {
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	-ms-font-smoothing: antialiased;
+	-o-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+}
+
+// Simulates hover on touch
+@mixin touch {
+	-webkit-user-select: none;
+	-webkit-touch-callout: none;
+	-webkit-tap-highlight-color: transparent;
+}
+
+// Vertical align anything
+@mixin vertical-align {
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+// Vendor
+@mixin vendor($name, $argument) {
+  -webkit-#{$name}: #{$argument};
+  -ms-#{$name}: #{$argument};
+  -moz-#{$name}: #{$argument};
+  -o-#{$name}: #{$argument};
+  #{$name}: #{$argument};
+}
+
+// RGBA mixin
+@mixin background-opacity($color, $opacity: 0.5) {
+    background-color: $color;
+    background-color: rgba($color, $opacity);
+}
+
+// Transition
+@mixin transition() {
+	-moz-transition: all 0.1s ease-in-out;
+	-webkit-transition: all 0.1s ease-in-out;
+	-o-transition: all 0.1s ease-in-out;
+	transition: all 0.1s ease-in-out;
+}
+
+@mixin no-transition() {
+	-moz-transition: none;
+	-webkit-transition: none;
+	-o-transition: all 0s ease-in-out;
+	transition: none;
+}
+
+// Opacity
+@mixin opacity($alpha) {
+	$msopacity: ($alpha * 100);
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$msopacity})";
+	filter: alpha(opacity=$msopacity);
+	-moz-opacity: $alpha;
+	-khtml-opacity: $alpha;
+	opacity: $alpha;
+	zoom: 1;
+}
+
+// Emboss
+@mixin emboss($opacity1:0.8, $opacity2:0.05){
+	box-shadow: white($opacity1) 0 1px 0, inset black($opacity2) 0 1px 0;
+}
+
+// Letterpress
+@mixin letterpress($opacity:0.5){
+	text-shadow:white($opacity) 0 1px 0;
+}
+
+// Hide text
+@mixin hide-text {
+	font: 0/0 a;
+	text-shadow: none;
+	color: transparent;
+}
+
+// Reset
+@mixin reset {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+// Rotate
+@mixin rotate($degrees) {
+	-webkit-transform:rotate($degrees);
+	-moz-transform:rotate($degrees);
+	-o-transform:rotate($degrees);
+	-ms-transform:rotate($degrees);
+}
+
+// Radius
+@mixin radius($radius: 3px) {
+	-moz-border-radius: $radius;
+	-webkit-border-radius: $radius;
+	border-radius: $radius;
+}
+
+// Black and white
+@mixin grayscale {
+	filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+	filter: gray;
+	-webkit-filter: grayscale(100%);
+}
+
+// Shadow
+@mixin shadow($horizontaloffset: 0, $verticaloffset: 0, $blur: 3px, $spread: 1px, $color: $color-shadow) {
+	-moz-box-shadow: $horizontaloffset $verticaloffset $blur $spread $color;
+	-webkit-box-shadow: $horizontaloffset $verticaloffset $blur $spread $color;
+	box-shadow: $horizontaloffset $verticaloffset $blur $spread $color;
+}
+
+// Shadow, inset
+@mixin shadow-inset($horizontaloffset: 0, $verticaloffset: 0, $blur: 3px, $spread: 0p, $color: $color-shadow) {
+	-moz-box-shadow: inset $horizontaloffset $verticaloffset $blur $spread $color;
+	-webkit-box-shadow: inset $horizontaloffset $verticaloffset $blur $spread $color;
+	box-shadow: inner $horizontaloffset $verticaloffset $blur $spread $color;
+}
+
+// Background Clip
+@mixin background-clip($type:padding) {
+	-moz-background-clip: $type;
+	-webkit-background-clip: $type+-box;
+	background-clip: $type+-box;
+}
+
+// Clear float
+@mixin cf {
+	*zoom: 1;
+
+	&:before,
+	&:after {
+		content: " ";
+		display: table;
+	}
+
+	&:after { clear: both; }
+}
+
+// Clear float, reset
+@mixin no-cf {
+	&:before,
+	&:after {
+		content: none;
+		display: inline;
+	}
+
+	&:after {
+		clear: none;
+	}
+}
+
+// Reset appearance
+@mixin no-appearance {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-o-appearance: none;
+	appearance: none;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+
+// IE specific styles
+@mixin lt($version) {
+	html.lt-#{$version} & {
+		@content;
+	}
+}

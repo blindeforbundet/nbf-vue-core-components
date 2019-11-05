@@ -1,0 +1,254 @@
+.story-bubble {
+	position: relative;	
+	display: block;	
+	width:100%;
+	margin-bottom: $baseline;
+	@include cf();
+	@include break(medium) {
+		z-index:1;	
+	}
+	&__grid	{
+		vertical-align: top;
+		width: 100%;
+		text-align: left;	
+	}
+	&__image {
+		display: block;
+		overflow: hidden;
+		@include radius(100%);
+		//max-width: 150px;
+		border:3px solid $orange;
+		border-bottom:15px solid $orange;
+		border-right:15px solid $orange;
+		width:66%;		
+		margin-left: $baseline*1;
+		max-width: 200px;		
+		@include break(small) {
+			//margin-left: 0;
+			//width:50%;
+			//float:left;		
+		}
+		/*	
+		@include break(medium) {		
+			//max-width: 250px;
+			width:50%;
+			border:10px solid $orange;
+			border-bottom:30px solid $orange;
+			border-right:30px solid $orange;				
+		}
+		@include break(large) {		
+			position: absolute;
+			float:none;
+			max-width: none;
+			border:none;
+			width:50%;
+			top:10%;
+			left:10%;		
+		}
+		*/
+	}
+	&__text-wrapper {
+		padding-top: $baseline;
+		text-align: left;
+		position: relative;		
+		box-sizing: border-box;		
+		@include break(small) {		
+			//margin-top: $baseline*2;
+			//float:left;		
+			//width:50%;		
+			//padding-left: $baseline;
+		}
+		/*									
+		@include break(medium) {
+			width:50%;
+			margin-top: 10%;			
+		}
+		@include break(large) {	
+			width:66%;
+			float:none;
+			margin:0;	
+			position: absolute;
+			bottom:0px;
+			top:100%;
+			left:25%;
+			right:25%;		
+		}		
+		*/
+	}	
+	&__title {
+		@extend .text;
+		display: inline;
+		border-bottom: 3px solid transparent;
+		margin: 0;
+		font-family: $font-header;
+	}		
+	&__button-play {
+		position: absolute;
+		margin: 0;
+		left:$baseline/2;
+		top:$baseline*2;
+	}
+	&__button-text {
+		position: static;
+		overflow: hidden;
+		width:$baseline*2;
+		height:$baseline*2;
+		text-indent: 100px;
+		white-space: nowrap;
+		margin-left: 0;
+		border-radius: 50%;
+		&:before {
+			width:$baseline;
+			@include sprite(0.5,2);			
+			width:$baseline;
+			height:$baseline;
+			margin-top:3px;
+			margin-left: 3px;
+			display: block;
+			
+		}
+		&:hover, &:focus {
+			outline:none;
+		}
+	}
+
+	&__controls {
+		position: absolute;
+		left:0%;
+		top:-$baseline*8.8;
+		margin: 0;	
+		@include break(medium) {
+			//top:-$baseline*9.5;	
+		}
+	}	
+	&__lead {
+		@extend .text;		
+	}	
+	&__wrapper {
+		position: relative;
+		width:100%;
+		@include break(small) {
+			width:50%;
+			display: inline-block;
+			padding-right:$baseline;
+			vertical-align: top;
+			
+		}			
+				
+		@include break(medium) {
+			&--frontpage {
+				position: absolute;
+				display: block;	
+				.story-bubble__image {
+					width:50%;
+					max-width: none;
+					margin:0; 
+					float:left;
+					border:6px solid $orange;
+					border-bottom:20px solid $orange;
+					border-right:20px solid $orange;					
+				}			
+				.story-bubble__text-wrapper	{
+					margin-top: 7%;
+					width:50%;
+					padding-left:$baseline;
+					float:left;
+				}	
+				.story-bubble__controls {
+					top:-$baseline*4.7;
+					left:-$baseline*5.7;
+				}
+				.story-bubble__button-play {
+					top:$baseline*2;
+					left:$baseline;
+				}	
+				// Posisjonering av enkeltbobler						
+				&-first {	
+					width:120%;
+					top:-($baseline*45);
+					right:0;
+				}
+				&-second {	
+					width:100%;
+					top:-($baseline*24);
+					right:25%;
+				}
+				&-third {	
+					width:80%;
+					top:-($baseline*7);
+					left:$baseline*2;
+				}								
+
+			}
+		}		
+		@include break(large) {
+			&--frontpage {
+				.story-bubble__body {
+					position: absolute;
+					text-align: center;
+					width:100%;
+						
+				}
+				.story-bubble {
+					background: $orange;
+					border-radius: 50%;
+					padding-bottom: 100%;						
+				}
+				.story-bubble__image {
+					width:52%;
+					margin-left: 10%;
+					margin-top: 10%;				
+					border:none;	
+					float:none;
+				}			
+				.story-bubble__text-wrapper	{
+					margin-top: 0;
+					width:70%;
+					margin-left: 15%;
+					float:none;
+				}	
+				.story-bubble__controls {				
+					top:-$baseline*8.6;
+					left:-$baseline*2.1;
+				}	
+				.story-bubble__button-play {
+					top:$baseline*1.8;
+					left:$baseline/2;
+				}					
+				// Posisjonering av enkeltbobler				
+				&-first {
+					width:100%;
+					max-width: 500px;
+					top:-($baseline*40);
+					right:auto;
+					left:-35%;
+					.story-bubble {
+						@include background-opacity($orange,0.8);					
+					}
+	
+				}
+				&-second {	
+					width:80%;
+					max-width: 410px;		
+					top:-($baseline*16);		
+					right:15%;
+					.story-bubble {
+						@include background-opacity($yellow-extralight,0.8);
+					}					
+				}
+				&-third {	
+					width:80%;	
+					max-width: 410px;			
+					top:-($baseline*46);		
+					left:auto;
+					right:-10%;
+					.story-bubble {
+						background:$yellow;
+						@include background-opacity($yellow,0.8);
+					}						
+				}					
+			}	
+			
+		}				
+	}	
+}

@@ -1,0 +1,76 @@
+.player_wrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    /* display: none; */
+    z-index: 98;
+    background-color: #e6e6e6;
+  }
+  .player_wrapper>iframe {
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+
+
+  .campaign-videoheader__play_button {
+    position: absolute;
+    z-index: 99;
+    border: none;
+    left: calc(50% - 80px);
+    top: calc(50% - 80px);
+    width: 180px;
+    height: 180px;
+    background: url(../graphics/svg/controller__play-buttons.svg);
+    background-size: cover;
+    background-position: 0 0px;
+  }
+
+
+  @media (min-width: 320px) {
+    .campaign-videoheader__play_button {
+    left: calc(50% - 40px);
+    top: calc(50% - 40px);
+    width: 80px;
+    height: 80px;
+    }
+    .campaign-videoheader__play_button:hover {
+      background-position: -80px 0;
+    }
+  }
+  @media (min-width: 1050px) {
+    .campaign-videoheader__play_button {
+    left: calc(50% - 80px);
+    top: calc(50% - 80px);
+    width: 180px;
+    height: 180px;
+    }
+    .campaign-videoheader__play_button:hover {
+      background-position: -180px 0;
+    }
+  }
+
+
+  .campaign-videoheader__wrapper {
+  bottom: 0;
+   position: absolute;
+   z-index: 2000;
+   width: 100%;
+  }
+  .campaign-videoheader__body {
+    max-width: 1330px;
+    margin: 0 auto;
+
+  }
+  .campaign-videoheader__description {
+  padding: 10px 15px;
+
+    display: inline-block;
+    background-color: white;
+  }
+  .campaign-videoheader__title-wrapper {
+    margin-left: 15px;
+  }

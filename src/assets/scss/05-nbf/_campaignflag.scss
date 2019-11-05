@@ -1,0 +1,22 @@
+.section--campaign-reference {
+    &--image {
+        margin-top: -60px;
+        height: 306px;
+        background-size: cover;
+        background-position: center;
+    }
+    .button {
+        position: absolute;
+        bottom: 7.5px;
+    }
+
+    @include max-break(medium) {
+        &--image {
+            margin-top: 0;
+        }
+        .button {
+            position: relative;
+            bottom: 0;
+        }
+    }
+}

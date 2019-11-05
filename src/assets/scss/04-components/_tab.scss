@@ -1,0 +1,73 @@
+// If js
+.js {
+
+	// Tab block
+	.tab {
+		@extend %module;
+		position: relative;
+		margin-bottom: $grid-gutter + ($baseline * 2);
+		@include cf;
+
+		@include break(medium) {
+			margin-bottom: $grid-gutter / 2 + ($baseline * 2);
+		}
+	}
+
+		// Tab element
+		.tab__header {
+			height: $grid-gutter * 1.5;
+			float: left;
+			margin: 0;
+			padding: $grid-gutter / 2;
+			display: block;
+			border: 1px solid transparent;
+
+			&:hover {
+				cursor: pointer;
+			}
+
+			@include break(medium) {
+				height: $grid-gutter + 1px;
+				padding: $grid-gutter / 4;
+			}
+		}
+
+		// Tab element
+		.tab__body {
+			width: 100%;
+			position: absolute;
+			top: ($grid-gutter * 1.5) - 1px;
+			z-index: 10;
+			padding: $grid-gutter / 2;
+			border: 1px solid $color-border;
+			background-color: #FFF;
+
+			@include break(medium) {
+				top: $grid-gutter;
+				padding: $grid-gutter / 4;
+			}
+		}
+
+		// Tab state
+		.tab__header_is_active {
+			position: relative;
+			z-index: 20;
+			border-color: $color-border;
+			border-bottom: none;
+			background-color: #FFF;
+
+			.tab__title {
+				color: $color-text;
+			}
+
+			&:hover,
+			&:focus {
+				cursor: auto;
+
+				.tab__title {
+					text-decoration: none;
+					color: $color-text;
+				}
+			}
+		}
+}

@@ -1,0 +1,23 @@
+.image--bw {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+@include break(medium) {
+    .image-right {
+        width: 50%;
+        float: right;
+    }
+
+}
+
+@include break(large) {
+    .image-right {
+        width: 33.33%;
+        float: right;
+    }
+
+}
+
+
+

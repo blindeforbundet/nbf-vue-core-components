@@ -1,0 +1,253 @@
+// Flag object
+.flag {
+	display: block;
+	width: 100%;
+	position: relative;
+	@include cf;
+
+
+	display: block;
+
+	&__image {
+		max-width: 150px;
+	}
+
+	// Flag elements
+	&__body,
+	&__image,
+	&--rev &__body,
+	&--rev &__image {
+		width: 100%;
+		display: block;
+		float: left;
+		clear: both;
+		margin: 0;
+		padding: 0;
+		vertical-align: top;
+	}
+
+	&__image,
+	&--rev &__image {
+		float:none;
+		margin:0 auto;
+		margin-bottom: $grid-gutter / 2;
+	}
+
+	&__image--round {
+		img {
+			@include radius(100%);
+			width: 100%;
+		}
+	}
+
+	&--out-off {
+
+			.flag__image {
+				max-width: 70%;
+			}
+		@include max-break(medium) {
+			.flag__body {
+				padding-left: 0px;
+			}
+		}
+
+		@include break(small) {
+			.flag__body {
+				width: 100%;
+
+				// padding-left: $grid-gutter;
+				& *:last-child {
+					margin-bottom: 0;
+				}
+			}
+
+
+			.flag__image {
+				width: 70%;
+				display: table-row;
+				text-align: center;
+
+				img {
+					width: 60%;
+					margin: 0 auto;
+					margin-bottom: 20px;
+				}
+			}
+		}
+
+		@include break(medium) {
+			@include span(8/12, 0);
+			@include push(1/12);
+			.flag__body {
+				width: 100%;
+
+
+				padding-left: $grid-gutter;
+				& *:last-child {
+					margin-bottom: 0;
+				}
+			}
+
+
+			.flag__image {
+				width: 37.5%;
+				display: table-cell;
+				img {
+					width: 100%;
+				}
+			}
+		}
+
+
+	}
+
+	@include break(small) {
+		margin-bottom: $baseline*2;
+		display: table;
+		// Flag elements
+		&__body,
+		&__image {
+			display: table-cell;
+			max-width: none;
+			float:none;
+		}
+
+		&__body {
+			width: 66%;
+			padding-left: $grid-gutter / 2;
+			& *:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		&__image {
+			width: 33%;
+			padding-right: $grid-gutter / 2;
+
+			img {
+				display: block;
+				width: 100%;
+				max-width: none;
+			}
+		}
+
+
+
+		// Flag modifiers
+		&--rev {
+			direction: rtl;
+
+			.flag__body {
+				padding-left: 0;
+				padding-right: $grid-gutter / 2;
+				direction: ltr;
+			}
+
+			.flag__image {
+				padding-right: 0;
+				padding-left: $grid-gutter / 2;
+				direction: ltr;
+			}
+		}
+
+		&--top {
+
+			.flag__body,
+			.flag__image {
+				vertical-align: top;
+			}
+		}
+
+		&--middle {
+
+			.flag__body,
+			.flag__image {
+				vertical-align: middle;
+			}
+		}
+
+		&--bottom {
+
+			.flag__body,
+			.flag__image {
+				vertical-align: bottom;
+			}
+		}
+
+	}
+		/*
+	@include max-break(medium) {
+		display: block;
+
+		// Flag elements
+		.flag__body,
+		.flag__image,
+		.flag--rev &__body,
+		.flag--rev &__image {
+			width: 100%;
+			max-width: 300px;
+			display: block;
+			float: left;
+			clear: both;
+			margin: 0;
+			padding: 0;
+			text-align: center;
+		}
+
+		.flag__image,
+		.flag--rev &__image {
+			margin-bottom: $grid-gutter / 2;
+		}
+	}*/
+
+	&--no-break {
+		@include break(large) {
+			display: block;
+
+			// Flag elements
+			.flag__body,
+			.flag__image,
+			.flag--rev &__body,
+			.flag--rev &__image {
+				width: 100%;
+				max-width: 300px;
+				display: block;
+				float: left;
+				clear: both;
+				margin: 0;
+				padding: 0;
+				text-align: center;
+			}
+
+			.flag__image,
+			.flag--rev &__image {
+				margin-bottom: $grid-gutter / 2;
+			}
+		}
+	}
+}
+
+// .flag-campaign {
+// 	width: 50%;
+// 	padding: 0 30px;
+// 	margin-left: 33.33333%;
+// 	position: relative;
+//
+// 	@include cf;
+//
+// 	&__image {
+// 		margin-left: -33.33333%;
+// 		width: 30%;
+// 		float:left;
+// 		&--round img {
+// 			border-radius: 50%;
+// 		}
+// 	}
+//
+// 	&__body {
+// 		position: relative;
+// 		top: 50%;
+// 		transform: translateY(-50%);
+// 	}
+//
+// }

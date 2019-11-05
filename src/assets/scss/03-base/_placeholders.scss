@@ -1,0 +1,9 @@
+// Module
+%module {
+	display: block;
+	margin-bottom: $grid-gutter;
+	
+	@include break(medium) {
+		margin-bottom: $grid-gutter / 2;
+	}
+}

@@ -1,0 +1,44 @@
+.entries {
+	border-top:$border-width dotted  rgba(0,0,0,0.1);
+	&__item {
+		border-bottom:$border-width dotted  rgba(0,0,0,0.1);
+		margin-left: 0;
+		&:before {
+			display: none;	
+		}	
+	}
+	&__title {
+		display: inline;
+		@include font-size(24);
+		border-bottom: 1px dotted $color-link;
+	}
+	
+	&__date {
+		color:$color-text;	
+	}
+	&__meta {
+		display: block;
+		padding-top: $baseline/2;
+	}
+	&__category {
+		color:$color-text-lighter;	
+		color:$color-text;
+		/*		
+		background: white;
+		display: inline-block;
+		padding:0 $baseline/2;	
+		*/
+	}
+	&__link {	
+		display: block;
+		padding:$baseline 0;
+		border:none;
+		&:hover, &:focus {
+			border:none;
+			.entries__title {
+				border-bottom: $border-width solid $color-link;
+			}
+		}
+	}
+	
+}

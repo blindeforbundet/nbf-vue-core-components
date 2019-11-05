@@ -1,0 +1,163 @@
+.section {
+	padding:0px;
+//	margin:0 (-$grid-gutter/2);
+//	margin-top: $baseline;
+//	margin-bottom: $baseline*2;
+	@include cf();
+	@include break(medium) {
+		margin: 0;
+	}
+	&--background {
+		background: $yellow-extralight;
+		color:$color-text;
+	}
+	&--no-background {
+		@include break(medium) {
+			background: none;
+		}
+	}
+
+	&--padding-below {
+		margin-bottom: $baseline*2;
+	}
+	&--no-padding-below {
+		@include break(medium) {
+			margin-bottom: 0;
+		}
+	}
+	&--frontpage {
+		padding-top: $baseline*3;
+		//padding-bottom: $baseline*2;
+		margin-left: 0;
+		@include break(medium) {
+			padding-top: $baseline*4;
+		}
+	}
+	&--frontpage-top {
+		padding-top: $baseline*2;
+		@include break(medium) {
+			padding-top: 28em;
+		}
+	}
+	&--lightbox {
+		position: relative;
+		z-index: 2;
+	}
+	&__line {
+		border-top: 12px solid rgba(0,0,0,0.1);
+		margin-bottom: 0;
+	}
+	&__border-top {
+		border-top: 12px solid rgba(0,0,0,0.1);
+	}
+	&__content-padding {
+		//padding-top: $baseline*2;
+		padding-bottom: $baseline*2;
+		@include break(medium) {
+			//padding-top: $baseline*4;
+			padding-bottom: $baseline*4;
+		}
+		margin-left: 0;
+		&--no-bottom {
+			padding-bottom: 0;
+		}
+		&--first {
+			@include max-break(medium) {
+				padding-bottom: 0;
+			}
+		}
+	}
+	&__related {
+		padding-top: $baseline*2;
+		@include break(medium) {
+			@include span(2/3);
+			@include push(1/3);
+			padding-top: $baseline*2!important; //En sass bug som gjør at jeg merkelig nok trengte å overskrive denne med important.. Hm..
+		}
+		@include break(large) {
+			@include span(4/12);
+			@include push(0);
+			padding-top: $baseline*2!important; //En sass bug som gjør at jeg merkelig nok trengte å overskrive denne med important.. Hm..
+			float:right;
+		}
+	}
+	&__body {
+		position: relative;
+		@include break(medium) {
+			@include span(2/3);
+			@include push(1/3);
+			padding:0px;
+		}
+		@include break(large) {
+			@include span(6/12);
+			@include push(4/12);
+			padding:0px;
+		}
+		&--no-padding {
+			@include max-break(medium) {
+				margin:0 (-$grid-gutter/2);
+			}
+			@include break(large) {
+				@include span(8/12);
+			}
+		}
+	}
+	&__body-with-related {
+		@include break(medium) {
+			@include span(2/3);
+			@include push(1/3);
+			padding:0px;
+		}
+		@include break(large) {
+			position: relative;
+			@include span(4/12);
+			@include push(4/12);
+			padding:0px;
+		}
+	}
+	&__frontpage-image {
+		width:50%;
+	}
+	&__text {
+    	padding:($baseline*2) 0;
+    	@include break(medium) {
+	    	padding:($baseline*3) 0;
+    	}
+	}
+
+	&__image-wrapper {
+		@include break(medium) {
+			margin-right: -($grid-gutter--large/2);
+			margin-left: -($grid-gutter--large/2);
+			//padding-left:$baseline;
+		}
+		//max-height: 500px;
+		//overflow-y: hidden;
+	}
+	&__image {
+		margin-bottom: 0;
+		width:100%;
+		display: block;
+	}
+	&__image-caption {
+		background: $yellow-extralight;
+		padding: $baseline $baseline;
+		max-width: ($wrapper-max-width/2 - ($grid-gutter/2));
+		@include break(medium) {
+			padding: $baseline $grid-gutter;
+			margin-left: -($grid-gutter--large/2);
+		}
+	}
+	&__title {
+		background: $yellow-light;
+		margin-bottom: 0;
+		display: inline-block;
+		padding: $baseline*1.5 $grid-gutter;
+		line-height: normal;
+		margin-top: $baseline*2;
+		margin-bottom: -$baseline;
+		@include break(medium) {
+			margin-left: -($grid-gutter);
+		}
+	}
+}

@@ -1,0 +1,46 @@
+// Typography
+$baseline: 15px;
+$paragraph-max-width: 600px;
+
+// Grid
+$grid-gutter: $baseline * 2;
+$grid-gutter--large: $baseline * 4;
+$wrapper-max-width: 1300px;
+$wrapper-max-width--small: 600px;
+
+// Breakpoints
+$break-small: 450px;
+$break-medium: 1050px;
+$break-large: 1250px;
+$break-x-large: 1450px;
+
+// Lines
+$border-width: 3px;
+$border-width--focus: 5px;
+$border-width--seperator: 10px;
+
+// Colors
+$red: #c60c30;
+$red-light: #e28597;
+$red-extralight:#ffedf0;
+$orange: #f29400;
+$orange-light: #f8c97f;
+$yellow: #fdc300;
+$yellow-light: #ffdc00;
+$yellow-extralight:#fff4bb;// #ffed7f;
+$grey: #e6e6e6;
+$grey-dark: #787878;
+$grey-extralight: #e6e6e6;
+
+// Semantic colors
+$color-link: $red;
+$color-text: #000;
+$color-text-lighter: #767676;
+$color-text-darker: #000;
+$color-shadow: #e5e5e5;
+$color-border: #e5e5e5;
+$color-background: #ffffff;
+$color-error: $red;
+
+$font-main: 'TheSansRegular', 'Verdana', sans-serif; // TODO
+$font-header: 'TheSansBold', 'Verdana', sans-serif;	 // TODO

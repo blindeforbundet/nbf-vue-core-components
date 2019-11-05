@@ -1,0 +1,12 @@
+.image {
+	display: block;
+}
+
+.image--round {
+	max-width: 300px;
+	@include radius(100%);	
+}
+
+.image__wrapper {
+	@extend %module;
+}

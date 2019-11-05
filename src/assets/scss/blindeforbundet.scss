@@ -1,0 +1,427 @@
+@import "01-settings/all";
+@import "02-generic/all";
+@import "03-base/all";
+@import "04-components/all";
+@import "05-nbf/all";
+@import "05-nbf/_menu";
+//@import "04-components/gallery";
+
+
+.header--frontpage {
+    position: relative;
+    &:after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+/*.header__topbar-wrapper {
+    background: transparent;
+}*/
+
+
+/*@media only screen and (max-width: 320px) {
+            .mainmenu__link {
+                display: block;
+            }
+        }*/
+
+.header {
+    margin: 0 auto;
+    padding-top: 0;
+    @media only screen and (min-width: 1050px) {
+        max-width: 1360px;
+    }
+}
+
+.wrapper {
+    margin: 0 auto;
+    padding-top: 0;
+    @media only screen and (min-width: 1050px) {
+        max-width: 1360px;
+    }
+}
+
+.header__topbar--frontpage {
+    padding: 0;
+    @media only screen and (min-width: 1050px) {
+        width: 340px;
+        float: left;
+    }
+    @media only screen and (max-width: 1049px) {
+        width: 100%;
+        max-width: 630px;
+        margin: auto;
+        float: none;
+    }
+    /*
+    @media only screen and (max-width: 730px) {
+        .mainmenu__wrapper {
+            width: 100%;
+            text-align: center;
+        }
+    }
+    */
+}
+
+@media only screen and (max-width: 1050px) {
+    .header__topbar {
+        margin-bottom: 30px;
+    }
+}
+
+@include max-break(medium){
+    .header__topbar {
+        margin-bottom: 0;
+    }
+}
+
+
+.bedrifter .header__topbar {
+    padding: 0;
+    @media only screen and (min-width: 1050px) {
+        width: 340px;
+        float: left;
+    }
+    @media only screen and (max-width: 1049px) {
+        width: 100%;
+        float: none;
+    }
+    @media only screen and (max-width: 730px) {
+        width: 100%;
+        max-width: 630px;
+        margin: auto;
+    }
+}
+
+.header__logo {
+    padding-left: 15px;
+    margin: 0;
+    transition: none;
+    @media only screen and (min-width: 1050px) {
+        padding-top: 30px;
+    }
+}
+@media only screen and (min-width: 1050px) {
+    .l-header-main--navigation {
+        padding-top: 30px;
+        //padding: 0;
+        //margin: 0;
+        //float: none;
+    }
+}
+.sub-nav {
+    width: 70%;
+    float: right;
+    padding-left: 60px;
+}
+
+@media only screen and (min-width: 1050px) {
+    .l-header-related {
+        width: auto;
+    }
+}
+
+@media only screen and (max-width: 1050px) {
+    .sub-nav {
+        width: 100%;
+        float: none;
+        padding-left: 15px;
+    }
+}
+
+.header__img {
+    width: 100%;
+    float: left;
+    height: 600px;
+    //position: relative;
+    background: url('https://www.blindeforbundet.no/kalender/@@images/24a6edfc-5768-4570-a992-945572663cb6.jpeg');
+    background-size: cover;
+    background-position: center center;
+    margin-top: 3.1rem;
+    @media only screen and (min-width: 1050px) {
+        width: calc(100% - 340px);
+        float: right;
+    }
+    /*@media only screen and (max-width: 730px) {*/
+    @include max-break(medium) {
+        width: 100%;
+        float: none;
+        /*height: 300px;*/
+        margin-top: 0;
+
+    }
+    @include max-break(small){
+        height: 300px;
+        width: 100%;
+        float: none;
+        /*height: 300px;*/
+        margin-top: 0;
+    }
+
+}
+
+.header__img--bedrifter {
+    height: 500px;
+    background-image: url('/assets/img/munch.jpg');
+}
+
+.header__img h2 {
+    position: absolute;
+    bottom: 1rem;
+    padding: 0.5rem 2rem;
+    //background: white;
+    margin-bottom: 0.5rem;
+    @media only screen and (min-width: 630px) {
+        left: calc(50% - 315px);
+    }
+    @media only screen and (min-width: 1050px) {
+        left: calc(30% + 4rem);
+    }
+}
+
+.campaign-header__title-backgorund {
+    background: #fff;
+    padding: 5px 0;
+    box-shadow: 15px 0 0 #fff, -15px 0 0 #fff;
+}
+
+
+.section--frontpage-top {
+    padding-top: 30px;
+}
+
+.page-title-crumb {
+    @include font-size(20);
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    line-height: 1;
+    margin-left: 1rem;
+    &:before {
+        content: '|';
+        padding-right: 1rem;
+    }
+}
+
+blockquote {
+    width: 100%;
+    margin: 0.5rem 0;
+    font-size: 2.4rem;
+    line-height: 1.2;
+}
+
+blockquote span {
+    /*color: $red;*/
+    &:before {
+        content: "\00ab";
+    }
+    &:after {
+        content: "\00bb";
+    }
+}
+
+h2.main-story-big,
+h2.main-story-small {
+    font-size: 6rem;
+    line-height: 1.2;
+}
+
+h2.main-story-small {
+    display: none;
+}
+
+@media only screen and (max-width: 1050px) {
+    h2.main-story-big {
+        display: none;
+    }
+    h2.main-story-small {
+        display: block;
+    }
+    .section--quote {
+        display: none;
+    }
+}
+
+/*.bedrift-tekst {
+    overflow-x: hidden;
+}*/
+
+.bedrift-tekst p {
+    font-size: 3rem;
+    line-height: 1.4;
+}
+
+.section--samarbeidsformer {
+    //background: #f6f6f6;
+}
+
+
+.content {
+    padding-bottom: 0;
+}
+
+.flex {
+    display: flex;
+    @media only screen and (max-width: 1050px) {
+        display: block;
+    }
+}
+
+.img-temp {
+    img {
+        width: 320px;
+        height: 320px;
+        border: none;
+        border-radius: 100%;
+    }
+    @media only screen and (max-width: 1050px) {
+        width: 320px;
+        height: 320px;
+        margin-bottom: 4rem;
+    }
+}
+
+.img-kampanje {
+    width: 270px;
+    height: 270px;
+    border: none !important;
+    border-radius: 100%;
+    display: block;
+    margin: auto;
+}
+
+.img-story {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+}
+
+
+a.img-link {
+    border-bottom: none;
+}
+
+.l-small {
+    width: 30%;
+}
+
+.l-big {
+    width: 70%;
+    padding-left: 60px;
+}
+
+.l-third {
+    width: 31.333%;
+    background: $yellow-extralight;
+    margin: 1%;
+    padding: 2rem 3rem 1.5rem;
+}
+
+@media only screen and (max-width: 1050px) {
+    .l-small, .l-third {
+        width: 100%;
+        margin-bottom: 3rem;
+    }
+    .l-big {
+        width: 100%;
+        padding-left: 0;
+    }
+}
+
+footer.footer {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+
+.campaign-header__title {
+    @include font-size(25);
+    @include line-height(25*$lineheight-ratio);
+    @media only screen and (min-width: 320px) {
+        @include font-size(35);
+        @include line-height(35*$lineheight-ratio);
+    }
+    @media only screen and (min-width: 630px) {
+        //@extend .h1;
+        @include font-size(50);
+        @include line-height(50*$lineheight-ratio);
+    }
+}
+
+
+@media only screen and (max-width: 1050px){
+    .header__topbar-wrapper--open {
+            min-height: 570px;
+    }
+}
+
+.submenu__link.smallmargin {
+    margin-bottom: 1rem;
+}
+
+
+.header__quote {
+    //background-color: $yellow;
+    //background-color: #fff4bb;
+    width: 270px;
+    height: 270px;
+    margin-right: -97px;
+    position: absolute;
+    //background-color: rgba(198, 12, 48, .1);
+    background-color: #fae7ea;
+    border-radius: 100%;
+    right: 0%;
+    top: -100px;
+    z-index: 100;
+
+}
+
+.bullet__body--header {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 30px;
+}
+
+.nbf__float {
+    float: left;
+}
+
+    @media only screen and (max-width: 1550px){
+        .header__quote {
+            left: 8%;
+
+        }
+    }
+
+
+.section--frontpage-top>div.wrapper {
+    position: relative;
+}
+
+/*#parallax > section.section.section--frontpage.section--frontpage-top > div {
+    position: relative;
+    padding-left: 410px;
+}
+*/
+
+/*section.section.section--frontpage.section--frontpage-top .l-small {
+    width: 270px;
+    height: 270px;
+    margin-right: -97px;
+
+    position: absolute;
+
+    background-color: #fff4bb;
+    border-radius: 100%;
+    right: 0%;
+    top: -100px;
+    z-index: 100;
+}*/
+
+.section__body-with-related {
+    // Ser ut til å fikse merkelig bug med støtteskjemaet
+    position: relative;
+}

@@ -1,0 +1,165 @@
+.campaign-header__logo {
+	display: block;
+	min-width: 100px;
+	max-width: 220px;
+	width: auto;
+	border: none;
+		@include max-break(medium) {
+			//width: 30%;
+			padding:0;
+			padding-top: $grid-gutter/2;
+			margin-left: $grid-gutter/2;
+		}
+		@include max-break(small) {
+			margin-right: 105px;
+		}
+		@include max-break(small) {
+			position: absolute;
+			top: 40%;
+			-ms-transform: translateY(-50%);
+		    -webkit-transform: translateY(-50%);
+			transform: translateY(-50%);
+		}
+		@include break(medium) {
+			float:left;
+			margin-left:$grid-gutter*2;
+			padding-top:5px;
+		}
+	&:hover {
+		border: none;
+	}
+	&:focus {
+
+	}
+
+	.campaign-header__logo-image {
+		display: block;
+		width: 100%;
+		@include break(small) {
+
+		}
+	}
+}
+
+.campaign-header {
+	position: relative;
+
+	&--sticky-menu {
+
+		@include break(small) {
+			margin-top: 75px;
+		}
+
+		@include break(medium) {
+			margin-top: 75px;
+		}
+
+		@include break(x-large) {
+			margin-top: 90px;
+		}
+
+	}
+
+	&__image {
+		height: 364px;
+		background-size: cover;
+		background-position: center center;
+		overflow: hidden;
+		margin-bottom: $grid-gutter/2;
+
+
+		@include break(small) {
+			height: 531px;
+		}
+
+		@include break(medium) {
+			height: 742px;
+		}
+
+		@include break(x-large) {
+			height: 842px;
+		}
+
+
+	}
+
+	&__body {
+		@include span(12/12);
+		padding:0px;
+
+		@include break(small) {
+			@include span(12/12);
+			margin-top: -45px;
+			padding:0px;
+		}
+
+		@include break(medium) {
+			@include span(4/12);
+			position: absolute;
+			bottom: 0px;
+		}
+	}
+	&__description {
+		background: #fff;
+		padding: 10px 0px;
+		@include break(small) {
+			padding: 10px 15px;
+		}
+
+	}
+	&__title-wrapper {
+		position: absolute;
+		top: 0px;
+		height: 364px;
+		@include break(small) {
+			height: 531px;
+			top: -40px;
+		}
+		@include break(medium) {
+			height: auto;
+			position: static;
+		}
+
+	}
+	&__title {
+		font-weight: bold;
+		margin-left: 15px;
+		position: absolute;
+		bottom: 0px;
+		width: 300px;
+
+		@include break(medium) {
+			position: static;
+
+		}
+		@include font-size(26);
+		@include line-height(26*$lineheight-ratio);
+		@include break(small) {
+			@include font-size(47);
+			@include line-height(47*$lineheight-ratio);
+			width: 500px;
+		}
+
+	}
+	&__title-backgorund {
+		background: #fff;
+		padding: 5px 0;
+		box-shadow: 15px 0 0 #fff, -15px 0 0 #fff;
+
+	}
+	&__button {
+			margin-left: 0px;
+			margin-bottom: 60px;
+	}
+	&__sublogo {
+		height: 33px;
+		margin-bottom:-9px;
+		width: auto;
+		@include break(small) {
+			height: 43px;
+			margin-bottom:-11px;
+			margin-left:5px;
+			width: auto;
+		}
+	}
+}

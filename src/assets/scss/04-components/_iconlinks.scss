@@ -1,0 +1,58 @@
+.iconlinks {
+	&__item {
+		margin-left: 0;
+		margin-bottom: $baseline;
+		&:before {
+			display: none;
+		}
+		@include break(medium) {	
+			display: inline-block;
+			margin-right: $baseline*2;		
+		}
+	}
+	&__text {
+		color:$color-text;
+	}	
+	&__link {
+		border:none;
+		&:before {
+			content:"";
+			display: inline-block;
+			background: url('~@/assets/graphics/svg/iconlinks.svg');
+			background-size: cover;
+			background-position: 0 0;
+			width:$baseline*2;
+			height:$baseline*2;
+			margin-right: $baseline/2;
+			vertical-align: top;			
+		}
+		&--newsletter {
+			&:before {
+				background-position: 0 0;
+			}	
+		}
+		&--facebook {
+			&:before {
+				background-position: -30px 0;
+			}	
+		}
+		&--twitter {
+			&:before {
+				background-position: -60px 0;
+			}	
+		}
+		&--youtube {
+			&:before {
+				background-position: -90px 0;
+			}	
+		}				
+		
+		&:hover, &:focus {
+			border:none;
+			.iconlinks__text {
+				color:$color-link;			
+				border-bottom: $border-width solid $color-link;				
+			}
+		}
+	}
+}

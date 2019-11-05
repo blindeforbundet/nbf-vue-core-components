@@ -1,0 +1,47 @@
+.story-quote {
+	display: block;
+	border:none;	
+	width:100%;
+	color:$color-text;	
+	@include break(medium) {
+
+	}
+	
+	&__quote {
+		@include font-size(24);
+		@include line-height(24*$lineheight-ratio);
+		@include break(small) {
+			@include font-size(24);
+			@include line-height(24*$lineheight-ratio);	
+		}				
+		padding:0;	
+		margin-bottom: 0;
+		text-align: left;
+	}
+	
+	&__subtext {
+		font-family: $font-header;	
+		@include font-size(20);
+		@include line-height(20*$lineheight-ratio);			
+	}
+	
+	&__subtext-link {
+		@extend .link;	
+	}
+	
+	&__image {
+		@include max-break(small) {
+			max-width:175px !important;		
+		}
+		@include break(medium) {
+			max-width:300px;
+		}		
+	}
+
+	&:hover, &:focus {
+		border:none;
+		.story-quote__subtext-link {
+			border-bottom: 3px solid $color-link;
+		}
+	}	
+}

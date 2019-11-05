@@ -1,0 +1,132 @@
+.personvern__container {
+    @include break(medium) {
+        padding: 20px;
+    }
+    
+    p {
+        max-width: 100%;
+    }
+    .document {
+        h1, h2, h3 {
+            font-size: 2.4rem;
+        }
+    }
+
+    .is-hidden {
+        display: none;
+    }
+
+
+
+    .chapter {
+        margin-bottom: 40px;
+        &:first-of-type {
+            margin-top: 40px;
+        }
+    }
+
+
+    article.has-expandable {
+        background-color: white;
+        border-bottom: 3px dotted rgba(0,0,0,0.1);
+        &:first-of-type {
+            border-top: 3px dotted rgba(0,0,0,0.1);
+        }
+    }
+
+    article.has-expandable .document {
+        @include break(large) {
+            margin-left: 45px;
+            margin-right: 45px;
+        }
+        padding-bottom: 15px;
+    }
+
+    article.has-expandable:last-of-type {
+        background-color: white;
+        margin-bottom: 0px;
+    }
+
+
+    .toggle-expanded h2{
+        padding: 20px;
+    }
+
+    article.has-expandable h2 {
+        margin: 0;
+        cursor: pointer;   
+    }
+
+    .toggle__link {
+        color: black;
+        text-decoration: underline;
+        text-decoration-color: transparent;
+        text-decoration-style: dotted;
+        display: block;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        cursor: pointer;
+        font-size: 2.4rem;
+    }
+
+    .toggle-expanded:hover .toggle__link{
+        text-decoration: none;
+    }
+
+    .toggle-expanded:hover .toggle__link{
+        text-decoration: underline;
+        text-decoration-color: #c60c30;
+        /* color: #c60c30; */
+        
+    }
+
+    .toggle__link:before {
+        content: "";
+        display: block;
+        float: left;
+        height: 30px;
+        width: 30px;
+        margin: 0;
+        margin-right: 15px;
+        vertical-align: middle;
+        border-radius: none;
+        background: none;
+        background-image: url('~@/assets/graphics/plus_icon_nobg.svg');
+        background-repeat: no-repeat;
+    }
+
+    .toggle-expanded:hover .toggle__link:before {
+        transition: transform .3s;
+        transform: scale(1.2);
+    }
+
+    .is-expanded .toggle__link:before  {
+        background-position: 0px -30px;
+    }
+    .is-expanded .toggle__link {
+        font-weight: bold;
+    }
+
+    header:focus {
+        border: none;
+        outline: none;
+    }
+
+    dt {
+        font-weight: bold;
+        border-left: 10px solid rgba(0,0,0,0.1);
+        padding-left: 10px;
+    }
+    dd {
+        border-left: 10px solid rgba(0,0,0,0.1);
+        padding-left: 10px;
+        margin-bottom: 15px;
+        &:last-of-type {
+            margin-bottom: 30px;
+        }
+    }
+    dl {
+        
+    }
+
+}

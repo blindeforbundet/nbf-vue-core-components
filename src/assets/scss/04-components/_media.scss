@@ -1,0 +1,55 @@
+// Media block
+.media {
+	@extend %module;
+	@include cf;
+
+	// Media elements
+	&__image {
+		float: left;
+		margin-right: $grid-gutter / 2;
+		padding-right: $grid-gutter / 2;
+		width: 50%;
+		max-width: none;
+
+		img {
+			display: block;
+		}
+		&--circle {
+			border-radius: 50%
+		}
+	}
+
+	&__body {
+		overflow: hidden;
+
+		& *:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	// Media modifier
+	&--rev {
+
+		.media__image {
+			float: right;
+	 		margin-right: 0;
+	 		padding-right: 0;
+			margin-left: $grid-gutter / 2;
+			padding-left: $grid-gutter / 2;
+		}
+	}
+
+	@include break(medium) {
+
+		&__image,
+		&__image img,
+		&--rev &__image,
+		&--rev &__image img {
+			width: 100%;
+			display: block;
+			float: none;
+			padding: 0;
+			margin: 0 0 $grid-gutter / 2 0;
+		}
+	}
+}

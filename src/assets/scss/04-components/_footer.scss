@@ -1,0 +1,25 @@
+.footer {
+	overflow-x: hidden;
+	overflow-y: auto;
+	padding-top:$baseline*3;
+	padding-bottom:$baseline*3;
+	background: $grey-extralight;
+	&__search {
+		margin-bottom: $baseline;
+	}
+	&__addressfield {
+		padding-top: $baseline;
+		padding-bottom:$baseline*2;
+	}
+	&__term {
+		display: inline;
+		font-family:$font-header;
+		font-style: normal;
+	}
+
+	&__description {
+		display: inline;
+		font-style: normal;
+	}
+
+}

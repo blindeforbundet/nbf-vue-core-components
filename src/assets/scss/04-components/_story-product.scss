@@ -1,0 +1,58 @@
+.story-product {
+	display: block;
+	border:none;	
+	width:100%;
+	@include break(medium) {
+
+	}
+	
+	&__title {
+		@extend .text;	
+		font-family: $font-header;
+		margin-bottom: $baseline/2;
+		@include break(medium) {
+			text-align: center;		
+		}
+	}
+
+	&__title-link {
+		@extend .link;	
+	}
+	
+	&__image {
+		overflow: hidden;
+		display: block;
+		@include break(medium) {
+			max-height:250px;
+		}		
+		img {
+			margin-top: $baseline;
+			margin-bottom: -$baseline;
+			display: block;
+			@include transition();
+		}
+	}
+	&__dice {
+		display: block;
+		background: url('~@/assets/graphics/svg/dice-6.svg');
+		background-size: contain;
+		width:100px;
+		height:100px;
+		position: absolute;
+		right:0px;
+		overflow: hidden;
+		line-height: 1000px;
+	}
+	&:hover, &:focus {
+		border:none;
+		.story-product__image {
+			img {
+				margin-top: 0px;
+				margin-bottom: 0px;
+			}
+		}	
+		.story-product__title-link {
+			border-bottom: 3px solid $color-link;
+		}
+	}	
+}

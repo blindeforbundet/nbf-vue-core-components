@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="712px" height="625px" viewBox="0 0 712 625" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
+    <title> </title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="511.641333" height="289.377465"></rect>
+    </defs>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="LINE-CHART" sketch:type="MSLayerGroup" transform="translate(-27.000000, 238.000000)">
+            <rect id="background" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0" y="0" width="769" height="363" rx="3"></rect>
+            <g id="lines" transform="translate(30.760000, 30.676056)" sketch:type="MSShapeGroup">
+                <rect id="line" fill="#DDDDDD" x="0" y="276.084507" width="707.48" height="1.02253521"></rect>
+                <rect id="line" fill="#EFEFEF" x="661.34" y="1.02253521" width="1.02533333" height="276.084507"></rect>
+                <rect id="line" fill="#EFEFEF" x="569.06" y="1.02253521" width="1.02533333" height="276.084507"></rect>
+                <rect id="line" fill="#EFEFEF" x="476.78" y="1.02253521" width="1.02533333" height="276.084507"></rect>
+                <rect id="line" fill="#EFEFEF" x="384.5" y="1.02253521" width="1.02533333" height="276.084507"></rect>
+                <rect id="line" fill="#EFEFEF" x="292.22" y="1.02253521" width="1.02533333" height="276.084507"></rect>
+                <rect id="line" fill="#EFEFEF" x="199.94" y="1.02253521" width="1.02533333" height="276.084507"></rect>
+                <rect id="line" fill="#EFEFEF" x="107.66" y="0" width="1.02533333" height="276.084507"></rect>
+            </g>
+            <g id="path" transform="translate(0.000000, 18.405634)">
+                <mask id="mask-2" sketch:name="mask" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="mask" sketch:type="MSShapeGroup" xlink:href="#path-1"></use>
+                <path d="M86.623658,194.867568 C86.623658,194.867568 110.614785,144.260069 139.897391,144.260066 C169.179998,144.260064 191.600034,210.253692 231.656683,210.253697 C271.713331,210.253702 294.268874,90.0342023 324.004444,90.0342043 C353.740013,90.0342062 374.470771,193.284184 415.372059,193.284178 C456.273347,193.284173 477.250442,144.51158 507.775228,144.51158 C538.300013,144.511579 560.02785,180.990519 600.430599,180.990519 C640.833347,180.990518 664.378049,155.473361 693.619031,155.473363 C722.860013,155.473365 725.31906,179.784403 744.596203,179.784399 C763.873347,179.784394 744.596203,353.502382 744.596203,353.502382 L86.7846124,353.502382" stroke="#FFC400" stroke-width="3" sketch:type="MSShapeGroup" mask="url(#mask-2)"></path>
+            </g>
+            <g id="dates" transform="translate(87.153333, 320.053521)" font-weight="normal" font-family="TheSans-Caps" line-spacing="24" sketch:type="MSTextLayer" font-size="13.5333333" sketch:alignment="middle" fill="#666666">
+                <text id="SØN">
+                    <tspan x="591.9885" y="14">SØN</tspan>
+                </text>
+                <text id="LØR">
+                    <tspan x="501.2716" y="14">LØR</tspan>
+                </text>
+                <text id="FRE">
+                    <tspan x="410.081033" y="14">FRE</tspan>
+                </text>
+                <text id="TOR">
+                    <tspan x="316.1026" y="14">TOR</tspan>
+                </text>
+                <text id="ONS">
+                    <tspan x="222.8685" y="14">ONS</tspan>
+                </text>
+                <text id="TIR">
+                    <tspan x="134.540233" y="14">TIR</tspan>
+                </text>
+                <text id="MAN">
+                    <tspan x="36.3055667" y="14">MAN</tspan>
+                </text>
+            </g>
+            <g id="values" transform="translate(30.760000, 36.811268)" font-weight="normal" font-family="TheSans-Caps" line-spacing="24" fill="#666666" font-size="14.0525" sketch:type="MSTextLayer">
+                <text id="10">
+                    <tspan x="0" y="260.408451">10</tspan>
+                </text>
+                <text id="20%">
+                    <tspan x="0" y="199.056338">20</tspan>
+                </text>
+                <text id="30">
+                    <tspan x="0" y="137.704225">30</tspan>
+                </text>
+                <text id="40">
+                    <tspan x="0" y="76.3521127">40</tspan>
+                </text>
+                <text id="50">
+                    <tspan x="0" y="15">50</tspan>
+                </text>
+            </g>
+            <g id="points" transform="translate(134.318667, 104.298592)" stroke="#FFFFFF" stroke-width="2" fill="#F6A623" sketch:type="MSShapeGroup">
+                <ellipse id="point" cx="373.734" cy="58.7957746" rx="4.614" ry="4.60140845"></ellipse>
+                <ellipse id="point" cx="281.454" cy="106.85493" rx="4.614" ry="4.60140845"></ellipse>
+                <ellipse id="point" cx="189.174" cy="4.60140845" rx="4.614" ry="4.60140845"></ellipse>
+                <ellipse id="point" cx="96.894" cy="124.238028" rx="4.614" ry="4.60140845"></ellipse>
+                <ellipse id="point" cx="4.614" cy="58.7957746" rx="4.614" ry="4.60140845"></ellipse>
+            </g>
+            <g id="pointer" transform="translate(488.058667, 107.366197)">
+                <path d="M36.2172328,25.1983317 C36.9294441,23.2751291 37.3275474,21.2001704 37.3494604,19.0353686 C37.3820567,18.589111 37.3880735,18.3340637 37.3880735,18.3340637 L37.3433731,18.333971 C37.0712358,8.44468901 28.94716,0.511267606 18.9650638,0.511267606 C8.81111411,0.511267606 0.579711491,8.72020683 0.579711491,18.8464465 C0.579711491,21.3072841 1.06583132,23.6548922 1.94752799,25.7989748 C2.37747615,27.0418022 2.94615166,28.3337068 3.69823036,29.5866756 C6.58040352,34.3883979 18.8337531,48.6056729 18.8337531,48.6056729 C18.8337531,48.6056729 31.0506883,34.8936915 34.3035078,29.5866754 C35.1538313,28.1993616 35.7703809,26.6702724 36.2172328,25.1983317 Z" fill="#FFC400" sketch:type="MSShapeGroup"></path>
+                <text id="30" sketch:type="MSTextLayer" font-family="TheSansBold-Caps" font-size="13.4898785" font-weight="bold" sketch:alignment="middle" fill="#000000">
+                    <tspan x="11.7987962" y="24.2253521">30</tspan>
+                </text>
+            </g>
+        </g>
+        <text id="Denne-uken-har-120-f" sketch:type="MSTextLayer" font-family="TheSansBold-Plain" font-size="30" font-weight="bold" line-spacing="49" fill="#141823">
+            <tspan x="2" y="243">Denne uken har 120 fått synet tilbake </tspan>
+        </text>
+        <text id="14.466" sketch:type="MSTextLayer" font-family="TheSans-Caps" font-size="90" font-weight="normal" fill="#141823">
+            <tspan x="3" y="95">14.466</tspan>
+        </text>
+        <text id="54.324" sketch:type="MSTextLayer" font-family="TheSans-Caps" font-size="90" font-weight="normal" fill="#141823">
+            <tspan x="397" y="95">54.324</tspan>
+        </text>
+        <text id="i-år-har-vi-gitt-" sketch:type="MSTextLayer" font-family="TheSansBold-Caps" font-size="16" font-weight="bold" fill="#141823">
+            <tspan x="4" y="18">i år har vi gitt </tspan>
+        </text>
+        <text id="synet-tilbake" sketch:type="MSTextLayer" font-family="TheSans-Caps" font-size="16" font-weight="normal" fill="#141823">
+            <tspan x="4" y="124">synet tilbake</tspan>
+        </text>
+        <text id="igjen-for-å-nå-målet" sketch:type="MSTextLayer" font-family="TheSans-Caps" font-size="16" font-weight="normal" fill="#141823">
+            <tspan x="403" y="122">igjen for å nå målet for 2015</tspan>
+        </text>
+        <text id="vi-har" sketch:type="MSTextLayer" font-family="TheSansBold-Caps" font-size="16" font-weight="bold" fill="#141823">
+            <tspan x="402.5" y="18">vi har</tspan>
+        </text>
+    </g>
+</svg>

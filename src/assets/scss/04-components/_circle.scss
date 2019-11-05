@@ -1,0 +1,23 @@
+// Scalable Circle
+.circle {
+	position: relative;
+	padding-bottom: 100%;
+	background-color: $yellow;
+	//opacity: 0.75;
+	//mix-blend-mode: multiply; // Ikke støttet enda
+	text-align: center;
+	@include radius(100%);
+	&__body {
+		position: absolute;
+		width: 100%;
+		text-align: center;			
+		top: 50%;
+		transform: translateY(-50%);			
+	}
+	&--light {
+		background: $yellow-light;
+	}
+	&--extralight {
+		background: $yellow-extralight;
+	}
+}

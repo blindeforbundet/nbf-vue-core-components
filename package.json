@@ -1,19 +1,26 @@
 {
-  "name": "@nbf/vue-core-components",
-  "version": "0.0.1",
-  "description": "",
-  "main": "index.js",
+  "name": "prototype",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jahntore/nbf-vue-core-components.git"
+  "dependencies": {
+    "axios": "^0.19.0",
+    "core-js": "^3.3.2",
+    "vue": "^2.6.10"
   },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jahntore/nbf-vue-core-components/issues"
-  },
-  "homepage": "https://github.com/jahntore/nbf-vue-core-components#readme"
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^4.0.0",
+    "@vue/cli-plugin-eslint": "^4.0.0",
+    "@vue/cli-service": "^4.0.0",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^8.0.0",
+    "vue-template-compiler": "^2.6.10"
+  }
 }

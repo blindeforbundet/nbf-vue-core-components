@@ -1,0 +1,41 @@
+* {
+	@include vendor(box-sizing, border-box);
+}
+
+html,
+body {
+	height: 100%;
+	position: relative;
+}
+
+body {
+	//background: $grey-extralight;
+}
+
+.only-screenreaders {
+	position: absolute;
+	margin-left: -9999px;
+}
+
+.content {
+	//background-color: $color-background;
+	@include cf;
+	padding-bottom: $baseline*4;
+	@include break(medium) {
+		min-height: 800px;
+	}
+	&--no-padding {
+		padding: 0px;
+	}
+	&--overflow-hidden {
+		overflow-x: hidden;
+		overflow-y: hidden;
+		// overflow-y: auto;
+	}
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+.image-round {
+	@include radius(100%);
+}
