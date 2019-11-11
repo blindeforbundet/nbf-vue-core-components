@@ -17,7 +17,6 @@
     <h2 class="description">PanelMember</h2>
     <PanelMember />
 
-  
     <h2 class="description">NbfTextImageFloor</h2>
     <NbfTextImageFloor />
 
@@ -50,10 +49,10 @@
     
     <h2 class="description">NbfFooter (Kampanje)</h2>
     <NbfFooter />
-    <AudioPlayer />
+
 
     <FormStottOss />
-
+    <AudioPlayer />
   </div>
 </template>
 
@@ -134,5 +133,15 @@ export default {
 
 #app {
 
+}
+
+.description {
+    border-bottom: 2px solid #777;
+    color: #777;
+    font-size: 24px;
+    font-weight: normal;
+    font-family: "TheSansRegular";
+    margin-bottom: 30px;
+    padding-top: 30px;
 }
 </style>

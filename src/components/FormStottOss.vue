@@ -1,9 +1,8 @@
 <template>
     <section class="section section--padding-below">
 
-        <pre>{{selected}}</pre>
 
-        <div class="wrapper">
+
             <div class="section__body-with-related">
                 <div class="l-space-4">
                     <h1 id="stott-oss-skjema-embedded">Støtt vårt arbeid</h1>
@@ -146,7 +145,6 @@
                     </form>
 
 
-                </div>
             </div>
         </div>
     </section>
