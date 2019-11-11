@@ -17,6 +17,10 @@
     <h2 class="description">PanelMember</h2>
     <PanelMember />
 
+  
+    <h2 class="description">NbfTextImageFloor</h2>
+    <NbfTextImageFloor />
+
     <h2 class="description">Divider</h2>
     <Divider />
 
@@ -46,6 +50,10 @@
     
     <h2 class="description">NbfFooter (Kampanje)</h2>
     <NbfFooter />
+    <AudioPlayer />
+
+    <FormStottOss />
+
   </div>
 </template>
 
@@ -57,6 +65,8 @@ import CampaignHeader from './components/CampaignHeader.vue'
 import RelatedLink from './components/RelatedLink.vue'
 import PanelMember from './components/PanelMember.vue'
 
+import AudioPlayer from './components/AudioPlayer.vue'
+
 import Divider from './components/Divider.vue'
 import Footer from './components/Footer.vue'
 import Header from './components/Header.vue'
@@ -66,7 +76,10 @@ import PanelImagesAndContact from './components/PanelImagesAndContact.vue'
 import PanelLinkList from './components/PanelLinkList.vue'
 import PanelNewsListing from './components/PanelNewsListing.vue'
 import PanelTriple from './components/PanelTriple.vue'
+
+import NbfTextImageFloor from './components/NbfTextImageFloor.vue'
  
+import FormStottOss from '@/components/FormStottOss.vue'
 
 
 import "@/assets/scss/blindeforbundet.scss"; 
@@ -76,16 +89,19 @@ import PanelCampaignContent from '@/dummy_content/PanelCampaign.js'
 import PanelLinkListContent from '@/dummy_content/PanelLinkList.js'
 import PanelNewsListingContent from '@/dummy_content/PanelNewsListing.js'
 
+
+
 export default {
   name: 'app',
   data: function() {
-  return {
-    counter: 0,
-    PanelTripleContent,
-    PanelCampaignContent,
-    PanelLinkListContent,
-    PanelNewsListingContent
-  }
+    return {
+      counter: 0,
+      PanelTripleContent,
+      PanelCampaignContent,
+      PanelLinkListContent,
+      PanelNewsListingContent,
+      portal_url: 'https://www.blindeforbundet.no'
+    }
   },
   components: {
 
@@ -104,7 +120,11 @@ export default {
     PanelImagesAndContact,
     PanelLinkList,
     PanelNewsListing,
-    PanelTriple
+    PanelTriple,
+    
+    AudioPlayer,
+    NbfTextImageFloor,
+    FormStottOss
 
   }
 }
