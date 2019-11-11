@@ -37,7 +37,7 @@
 
 <script>
 export default {
-  name: 'PanelCampaign',
+  name: 'PanelImagesAndContact',
   props: {
     msg: String,
     params: Object
