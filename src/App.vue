@@ -53,13 +53,47 @@
     <h2 class="description">PanelGallery</h2>
     <PanelGallery />
 
-    <h2 class="description">FormStottOss</h2>
+    <component-documentation title="FormStottOss">
+       <template #code>
+<pre>
+import FormStottOss from 'nbf-vue-core-components/components/FormStottOss.vue'
+</pre>
+       </template>
+
+     </component-documentation>
     <FormStottOss />
+   
 
-    <h2 class="description">AudioPlayer</h2>
-    <AudioPlayer />
+  <h2 class="description">AudioPlayer</h2>
+  <AudioPlayer />
 
-  </div>
+
+<component-documentation title="PanelSummary">
+<template v-slot:code>
+<pre>
+import PanelSummary from './components/PanelSummary.vue'
+
+&lt;PanelSummary black="false" />
+&lt;PanelSummary black="true" />
+
+&lt;PanelSummary black="true">
+  &lt;template v-slot:text>
+    &lt;p>Test&lt;/p>
+  &lt;/template>
+&lt;/PanelSummary>
+
+</pre>
+</template>
+</component-documentation>
+<PanelSummary />
+<PanelSummary black="true">
+  <template v-slot:text>
+    <p>Test</p>
+  </template>
+</PanelSummary>
+
+
+</div>
 </template>
 
 <script>
@@ -67,11 +101,8 @@ import NbfHeader from './components/NbfHeader.vue'
 import NbfFooter from './components/NbfFooter.vue'
 import NbfTextFloor from './components/NbfTextFloor.vue'
 import CampaignHeader from './components/CampaignHeader.vue'
-import RelatedLink from './components/RelatedLink.vue'
 import FormMember from './components/FormMember.vue'
-
 import AudioPlayer from './components/AudioPlayer.vue'
-
 import Divider from './components/Divider.vue'
 import Footer from './components/Footer.vue'
 import Header from './components/Header.vue'
@@ -82,20 +113,24 @@ import PanelLinkList from './components/PanelLinkList.vue'
 import PanelNewsListing from './components/PanelNewsListing.vue'
 import PanelTriple from './components/PanelTriple.vue'
 import PanelGallery from './components/PanelGallery.vue'
-
 import NbfTextImageFloor from './components/NbfTextImageFloor.vue'
- 
+
+import PanelSummary from './components/PanelSummary.vue'
+
+// Forms
+import RelatedLink from './components/RelatedLink.vue'
 import FormStottOss from '@/components/FormStottOss.vue'
 
-
-import "@/assets/scss/blindeforbundet.scss"; 
-
+// Dummy content:
 import PanelTripleContent from '@/dummy_content/PanelTriple.js'
 import PanelCampaignContent from '@/dummy_content/PanelCampaign.js'
 import PanelLinkListContent from '@/dummy_content/PanelLinkList.js'
 import PanelNewsListingContent from '@/dummy_content/PanelNewsListing.js'
 import PanelImagesAndContactContent from '@/dummy_content/PanelImagesAndContact.js'
 
+import ComponentDocumentation from '@/components/ComponentDocumentation.vue'
+
+import "@/assets/scss/blindeforbundet.scss";
 
 
 export default {
@@ -132,25 +167,21 @@ export default {
     
     AudioPlayer,
     NbfTextImageFloor,
-    FormStottOss
-
+    FormStottOss,
+    ComponentDocumentation,
+    PanelSummary
   }
 }
 </script>
 
 <style lang="scss">
-
-#app {
-
-}
-
-.description {
-    border-bottom: 2px solid #777;
-    color: #777;
-    font-size: 24px;
-    font-weight: normal;
-    font-family: "TheSansRegular";
-    margin-bottom: 30px;
-    padding-top: 30px;
-}
+  .description {
+      border-bottom: 2px solid #777;
+      color: #777;
+      font-size: 24px;
+      font-weight: normal;
+      font-family: "TheSansRegular";
+      margin-bottom: 30px;
+      padding-top: 30px;
+  }
 </style>
