@@ -3,6 +3,9 @@
 
     <h2 class="description">NbfHeader</h2>
     <NbfHeader />
+
+    <h2 class="description">FormKalender</h2>
+    <FormKalender />
     
     <h2 class="description">CampaignHeader</h2>
     <CampaignHeader button_text="test" text="Dette er en tekst! den er litt lang!" header="Hellu 2019!!! " image_url="https://source.unsplash.com/featured/1080x720?city"/>
@@ -88,9 +91,10 @@ import PanelSummary from './components/PanelSummary.vue'
 <PanelSummary />
 <PanelSummary black="true">
   <template v-slot:text>
-    <p>Test</p>
+    <p>Slik kan dette panelet se ut med hvit på svart...</p>
   </template>
 </PanelSummary>
+
 
 
 </div>
@@ -129,7 +133,7 @@ import PanelNewsListingContent from '@/dummy_content/PanelNewsListing.js'
 import PanelImagesAndContactContent from '@/dummy_content/PanelImagesAndContact.js'
 
 import ComponentDocumentation from '@/components/ComponentDocumentation.vue'
-
+import FormKalender from '@/components/FormKalender.vue'
 import "@/assets/scss/blindeforbundet.scss";
 
 
@@ -169,7 +173,8 @@ export default {
     NbfTextImageFloor,
     FormStottOss,
     ComponentDocumentation,
-    PanelSummary
+    PanelSummary,
+    FormKalender
   }
 }
 </script>
