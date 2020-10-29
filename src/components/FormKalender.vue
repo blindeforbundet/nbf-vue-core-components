@@ -16,7 +16,7 @@
       </div>
       <div class="l-space-4 l-space-top-4- item_2">
 
-      <h2>Bestill kalender</h2>  
+      <h2 id="bestill-kalender">Bestill kalender</h2>  
         
         <p v-if="form_error_message" class="form__message form__message--error form__message--global" aria-live="alert">{{form_error_message}}</p>
         <form @submit.prevent="post_vipps_form">
