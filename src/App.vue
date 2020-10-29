@@ -4,6 +4,8 @@
     <h2 class="description">NbfHeader</h2>
     <NbfHeader />
 
+    <h2 class="description">NbfTextFloor</h2>
+    <NbfTextFloor content="test sdfg dfg dkjfghdjklfhj gkljsdjfkljg hjkldjfhjg kjsdhfk gjhsekfjg hdkjfg hkdjfhg kjhdfgkjhkjh" header="test" src="https://source.unsplash.com/featured/1080x720?hot" />
     <h2 class="description">FormKalender</h2>
     <FormKalender />
     
