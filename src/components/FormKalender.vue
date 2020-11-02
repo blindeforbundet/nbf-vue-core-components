@@ -11,12 +11,11 @@
     <div class="section__body--dis hurtikasse__form" v-if="!show_form">
       
       <div class="item_1">
-      <img src="@/assets/kalender_2021.jpg" class="form__image" v-if="true" alt="Bilde av valpekalenderen for 2021.">
-
+      <img :src="form_image_url " class="form__image" v-if="true" :alt="form_image_alt_text">
       </div>
       <div class="l-space-4 l-space-top-4- item_2">
 
-      <h2 id="bestill-kalender">Bestill kalender</h2>  
+      <h2 :id="form_id">Bestill kalender</h2>  
         
         <p v-if="form_error_message" class="form__message form__message--error form__message--global" aria-live="alert">{{form_error_message}}</p>
         <form @submit.prevent="post_vipps_form">
@@ -206,7 +205,10 @@ export default {
       context_url: undefined,
       button_disabled: false,
       vipps_button_disabled: false,
-      form_error_message: undefined
+      form_error_message: undefined,
+      form_image_url: undefined,
+      form_image_alt_text: undefined,
+      form_id: undefined
     }
   },
   computed: {
@@ -221,6 +223,9 @@ export default {
   },
   mounted () {
     this.context_url = window.context_url || '/Plone/testkampanje/bestill-kalender';
+    this.form_id = window.campaign_form_id || 'bestill-kalender';
+    this.form_image_url = window.campaign_form_image || '';
+    this.form_image_alt_text = window.form_image_alt_text || '';
   },
   methods: {
       post_vipps_form() {
