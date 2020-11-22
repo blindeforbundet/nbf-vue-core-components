@@ -208,7 +208,8 @@ export default {
       form_error_message: undefined,
       form_image_url: undefined,
       form_image_alt_text: undefined,
-      form_id: undefined
+      form_id: undefined,
+      IRK: undefined
     }
   },
   computed: {
@@ -226,6 +227,7 @@ export default {
     this.form_id = window.campaign_form_id || 'bestill-kalender';
     this.form_image_url = window.campaign_form_image || '';
     this.form_image_alt_text = window.form_image_alt_text || '';
+    this.IRK = window.form_IRK;
   },
   methods: {
       post_vipps_form() {
@@ -243,7 +245,8 @@ export default {
           axios.post(`${this.context_url}/vipps_initiate`, {
             "phone": this.phone,
             "calendar_count": this.calendar_count,
-            "amount": this.amount
+            "amount": this.amount,
+            "IRK": this.IRK
           }).then(res => {
                            console.log(res.data);
                            
@@ -292,10 +295,12 @@ export default {
           if(this.errors.length < 1) {
             var fullfill_url;
             if(this.payment_method == 'netaxept') {
-              fullfill_url = "/Plone/testkampanje/bestill-kalender/nets_order";
+              // fullfill_url = "/Plone/testkampanje/bestill-kalender/nets_order";
+              fullfill_url = `${this.context_url}/nets_order`;
             }
             else if (this.payment_method == 'invoice') {
-              fullfill_url = "/Plone/testkampanje/bestill-kalender/invoice_order";
+              // fullfill_url = "/Plone/testkampanje/bestill-kalender/invoice_order";
+              fullfill_url = `${this.context_url}/invoice_order`;
             }
             
             /*eslint-disable */
@@ -306,8 +311,12 @@ export default {
               "lastname": this.lastname,
               "address": this.address,
               "postalcode": this.postalcode,
+              "city": this.city,
               "calendar_count": this.calendar_count,
-              "support_amount": this.amount
+              "support_amount": this.amount,
+              "email": this.email,
+              "contact_via_email": this.contact_via_email,
+              "IRK": this.IRK
             })
             .then(res => {window.location = res.data.redirect_url})
             .catch(res => {this.button_disabled = false; this.form_error_message = DEFAULT_ERROR_MSG});
@@ -327,7 +336,8 @@ export default {
             return
           }
 
-          var url = `${this.$parent.portal_url}/@@postcode_lookup?postcode=${this.postalcode}`
+          // var url = `${this.$parent.portal_url}/@@postcode_lookup?postcode=${this.postalcode}`
+          var url = `/@@postcode_lookup?postcode=${this.postalcode}`
           axios.get(url)
             .then(res => {
                 if(res.data.hasOwnProperty('status')) {
